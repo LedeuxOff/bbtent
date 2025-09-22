@@ -23,20 +23,22 @@ function Index() {
       .catch((error) => console.log(error));
   };
 
-  return (
-    <div className="p-2">
-      <h3>Welcome Home!</h3>
+  return <></>;
 
-      <div>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-          <input name="fullName" placeholder="FullName" />
-          <input name="email" placeholder="Email" />
-          <input name="phone" placeholder="Phone" />
-          <input name="service" placeholder="Service" />
-          <input name="comment" placeholder="Comment" />
-          <button>Add</button>
-        </form>
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="p-2">
+  //     <h3>Welcome Home!</h3>
+
+  //     <div>
+  //       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+  //         <input name="fullName" placeholder="FullName" />
+  //         <input name="email" placeholder="Email" />
+  //         <input name="phone" placeholder="Phone" />
+  //         <input name="service" placeholder="Service" />
+  //         <input name="comment" placeholder="Comment" />
+  //         <button>Add</button>
+  //       </form>
+  //     </div>
+  //   </div>
+  // );
 }
