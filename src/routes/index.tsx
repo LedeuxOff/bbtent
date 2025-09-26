@@ -1,4 +1,8 @@
-import { MainPageAboutSection, MainPageWelcomeSection } from "@/pages/main";
+import {
+  MainPageAboutSection,
+  MainPageBranchesSection,
+  MainPageWelcomeSection,
+} from "@/pages/main";
 import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 
@@ -28,6 +32,7 @@ function Index() {
     <div className="flex flex-col gap-8 pt-28">
       <MainPageWelcomeSection />
       <MainPageAboutSection />
+      <MainPageBranchesSection />
     </div>
   );
 
