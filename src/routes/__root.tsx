@@ -3,7 +3,7 @@ import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 const RootLayout = () => (
-  <div className="flex flex-col">
+  <div className="flex flex-col min-h-[200vh]">
     <AppHeader />
     <Outlet />
     <AppFooter />

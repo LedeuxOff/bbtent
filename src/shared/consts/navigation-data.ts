@@ -3,5 +3,4 @@ export const navigationData = [
   { id: "about", anchor: "#about", label: "О компании" },
   { id: "photo", anchor: "#photo", label: "Фото наших работ" },
   { id: "feedback", anchor: "#feedback", label: "Отзывы клиентов" },
-  { id: "contacts", anchor: "#contacts", label: "Контакты" },
 ];

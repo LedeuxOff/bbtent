@@ -1,3 +1,4 @@
+import { MainPageAboutSection, MainPageWelcomeSection } from "@/pages/main";
 import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 
@@ -23,7 +24,12 @@ function Index() {
       .catch((error) => console.log(error));
   };
 
-  return <></>;
+  return (
+    <div className="flex flex-col gap-8 pt-28">
+      <MainPageWelcomeSection />
+      <MainPageAboutSection />
+    </div>
+  );
 
   // return (
   //   <div className="p-2">
