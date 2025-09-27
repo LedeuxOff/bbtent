@@ -1,6 +1,7 @@
 import {
   MainPageAboutSection,
   MainPageBranchesSection,
+  MainPageFeedbackSection,
   MainPageWelcomeSection,
 } from "@/pages/main";
 import { createFileRoute } from "@tanstack/react-router";
@@ -33,6 +34,7 @@ function Index() {
       <MainPageWelcomeSection />
       <MainPageAboutSection />
       <MainPageBranchesSection />
+      <MainPageFeedbackSection />
     </div>
   );
 
