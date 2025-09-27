@@ -12,7 +12,7 @@ export const AppContacts = () => {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="bg-[#FFFFFF33] border-none text-white cursor-pointer hover:bg-[#FFFFFF55] hover:text-white"
+          className="bg-[#ffd58077] font-[600] border-none text-white cursor-pointer hover:bg-[#ffd580AA] hover:text-white"
         >
           <PhoneIcon />
           Контакты
