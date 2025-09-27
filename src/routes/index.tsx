@@ -2,6 +2,7 @@ import {
   MainPageAboutSection,
   MainPageBranchesSection,
   MainPageFeedbackSection,
+  MainPageVideoSection,
   MainPageWelcomeSection,
 } from "@/pages/main";
 import { MainPageFAQSection } from "@/pages/main/faq-section";
@@ -37,6 +38,7 @@ function Index() {
       <MainPageBranchesSection />
       <MainPageFeedbackSection />
       <MainPageFAQSection />
+      <MainPageVideoSection />
     </div>
   );
 
