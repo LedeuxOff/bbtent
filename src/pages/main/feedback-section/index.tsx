@@ -7,7 +7,7 @@ export const MainPageFeedbackSection = () => {
         <div className="flex flex-col gap-8">
           <span className="text-[38px] font-[700]">Отзывы клиентов</span>
           <div className="grid grid-cols-3 gap-8">
-            <div className="col-span-1 border-[2px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8">
+            <div className="col-span-1 border-[1px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8 shadow-lg">
               <div className="flex flex-col gap-8">
                 <img
                   src="/feedback/gazel.jpg"
@@ -29,7 +29,7 @@ export const MainPageFeedbackSection = () => {
               </div>
             </div>
 
-            <div className="col-span-1 border-[2px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8">
+            <div className="col-span-1 border-[1px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8 shadow-lg">
               <div className="flex flex-col gap-8">
                 <img
                   src="/feedback/pricep-1.jpg"
@@ -48,7 +48,7 @@ export const MainPageFeedbackSection = () => {
               </div>
             </div>
 
-            <div className="col-span-1 border-[2px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8">
+            <div className="col-span-1 border-[1px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8 shadow-lg">
               <div className="flex flex-col gap-8">
                 <img
                   src="/feedback/pricep-2.jpg"

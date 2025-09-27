@@ -4,6 +4,7 @@ import {
   MainPageFeedbackSection,
   MainPageWelcomeSection,
 } from "@/pages/main";
+import { MainPageFAQSection } from "@/pages/main/faq-section";
 import { createFileRoute } from "@tanstack/react-router";
 import type { FormEvent } from "react";
 
@@ -35,6 +36,7 @@ function Index() {
       <MainPageAboutSection />
       <MainPageBranchesSection />
       <MainPageFeedbackSection />
+      <MainPageFAQSection />
     </div>
   );
 
