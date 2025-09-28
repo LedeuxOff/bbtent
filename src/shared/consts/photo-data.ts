@@ -1,0 +1,22 @@
+export const PHOTO_DATA = {
+  angari: [
+    { id: "1", src: "/photo/angari/1.jpg" },
+    { id: "2", src: "" },
+    { id: "3", src: "" },
+    { id: "4", src: "" },
+    { id: "5", src: "" },
+    { id: "6", src: "" },
+    { id: "7", src: "" },
+    { id: "8", src: "" },
+    { id: "9", src: "" },
+  ],
+  basseini: [{ id: "", src: "" }],
+  "burovie-ukritya": [{ id: "", src: "" }],
+  furi: [{ id: "", src: "" }],
+  krovlya: [{ id: "", src: "" }],
+  laguni: [{ id: "", src: "" }],
+  "myagkie-okna": [{ id: "", src: "" }],
+  paviloni: [{ id: "", src: "" }],
+  pricepi: [{ id: "", src: "" }],
+  "selhoz-ukritya": [{ id: "", src: "" }],
+};

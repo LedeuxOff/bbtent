@@ -35,7 +35,7 @@ export const MainPageBranchesSection = () => {
             <div
               className={cn(
                 "items-center bg-[rgba(0,0,0,.4)] rounded-[8px] px-2 text-white hover:bg-[rgba(0,0,0,.6)] swiper-button-prev",
-                hovered ? "flex" : "hidden"
+                "flex"
               )}
             >
               <ChevronLeft />
@@ -55,11 +55,11 @@ export const MainPageBranchesSection = () => {
                 {BRANCHES_DATA.map((el) => (
                   <SwiperSlide key={el.id} style={{ width: CARD_WIDTH }}>
                     <div className="flex flex-col gap-4 group">
-                      <div className="w-full h-[260px] sm:h-[260px] md:h-[280px] lg:h-[260px] rounded-[8px] overflow-hidden relative">
+                      <div className="w-full h-[260px] sm:h-[260px] md:h-[280px] lg:h-[260px] rounded-[8px] overflow-hidden relative bg-[#000]">
                         <img
                           src={el.imgSrc}
                           alt="image-cover"
-                          className="object-cover h-full w-full"
+                          className="object-cover h-full w-full opacity-100 group-hover:opacity-50"
                         />
 
                         <div className="absolute bottom-4 bg-[rgba(0,0,0,.6)] mx-[4%] rounded-[8px] px-4 py-2">
@@ -76,14 +76,14 @@ export const MainPageBranchesSection = () => {
             <div
               className={cn(
                 "absolute top-0 bottom-0 w-30 bg-gradient-to-l from-[#ffffff] to-transparent z-10 pointer-events-none",
-                hovered ? "right-12" : "right-0"
+                "right-12"
               )}
             ></div>
 
             <div
               className={cn(
                 "flex items-center bg-[rgba(0,0,0,.4)] rounded-[8px] px-2 text-white hover:bg-[rgba(0,0,0,.6)] swiper-button-next relative z-100",
-                hovered ? "flex" : "hidden"
+                "flex"
               )}
             >
               <ChevronRight />
