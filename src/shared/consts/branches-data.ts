@@ -18,7 +18,7 @@ export const BRANCHES_DATA: {
     id: "2",
     key: "pricepi",
     label: "Тенты на прицепы",
-    photoCount: 9,
+    photoCount: 18,
     imgSrc: "/branches/pricepi-branch.jpg",
   },
   {
