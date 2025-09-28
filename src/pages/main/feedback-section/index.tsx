@@ -2,7 +2,7 @@ import { AppContainer } from "@/shared/ui-kit";
 
 export const MainPageFeedbackSection = () => {
   return (
-    <div className="w-full flex justify-center">
+    <div id="#feedback" className="w-full flex justify-center">
       <AppContainer>
         <div className="flex flex-col gap-8">
           <span className="text-[38px] font-[700]">Отзывы клиентов</span>

@@ -4,7 +4,7 @@ import { BadgeRussianRubleIcon, MailIcon } from "lucide-react";
 
 export const MainPageWelcomeSection = () => {
   return (
-    <div className="w-full flex justify-center">
+    <div id="#welcome" className="w-full flex justify-center">
       <AppContainer props={{}}>
         <div className="flex flex-col gap-8 md:gap-12 items-center justify-center bg-[#112138cc] py-8 md:py-16 px-4 rounded-[16px]">
           <span className="text-[48px] md:text-[64px] font-[700] text-white">

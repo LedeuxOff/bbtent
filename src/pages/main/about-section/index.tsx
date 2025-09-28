@@ -3,7 +3,7 @@ import { Clock2, Settings, ShellIcon, Trophy } from "lucide-react";
 
 export const MainPageAboutSection = () => {
   return (
-    <div className="w-full flex justify-center">
+    <div id="#about" className="w-full flex justify-center">
       <AppContainer>
         <div className="flex flex-col gap-8">
           <span className="text-[38px] font-[700]">О компании</span>
