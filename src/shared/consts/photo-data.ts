@@ -15,7 +15,15 @@ export const PHOTO_DATA = {
   },
   basseini: {
     name: "Бассейны",
-    data: [{ id: "", src: "" }],
+    data: [
+      { id: "1", src: "/photo/basseini/1.jpg" },
+      { id: "2", src: "/photo/basseini/2.jpg" },
+      { id: "3", src: "/photo/basseini/3.jpg" },
+      { id: "4", src: "/photo/basseini/4.jpg" },
+      { id: "5", src: "/photo/basseini/5.jpg" },
+      { id: "6", src: "/photo/basseini/6.jpg" },
+      { id: "7", src: "/photo/basseini/7.jpg" },
+    ],
   },
   "burovie-ukritya": {
     name: "Буровые укрытия",

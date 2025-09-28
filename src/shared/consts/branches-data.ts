@@ -25,7 +25,7 @@ export const BRANCHES_DATA: {
     id: "3",
     key: "basseini",
     label: "Бассейны",
-    photoCount: 9,
+    photoCount: 7,
     imgSrc: "/branches/basseini-branch.jpg",
   },
   {

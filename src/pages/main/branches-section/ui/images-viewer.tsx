@@ -59,13 +59,13 @@ export const ImagesViewer = ({
             {images?.map((item) => (
               <div
                 key={item?.id}
-                className="aspect-w-16 min-w-[180px] aspect-h-9 h-full rounded-lg overflow-hidden"
+                className="aspect-w-16 min-w-[180px] aspect-h-9 h-full max-h-[140px] rounded-lg overflow-hidden"
                 onMouseEnter={() => setImagePreview(item.src)}
               >
                 <img
                   src={item.src}
                   alt="Tertiary Image"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             ))}
