@@ -1,4 +1,5 @@
 import { AppContainer } from "@/shared/ui-kit";
+import { Clock2, Settings, ShellIcon, Trophy } from "lucide-react";
 
 export const MainPageAboutSection = () => {
   return (
@@ -8,56 +9,63 @@ export const MainPageAboutSection = () => {
           <span className="text-[38px] font-[700]">О компании</span>
 
           <div className="flex flex-col gap-4">
-            <div className="bg-[rgba(0,0,0,0.6)] backdrop-blur-sm shadow-sm border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-4 flex flex-col gap-6 justify-between">
-              <span className="text-white font-[700] text-[24px] leading-[28px]">
-                Более 20 лет!
-              </span>
-
-              <span className="text-[#cfcfcf] text-[14px]">
-                Опыт изготовления: тентов, пологов, укрытий, навесов, ангаров,
-                пленочных хранилищ из геомембран, а так же бассейнов - более 20
-                лет!
-              </span>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="bg-[rgba(0,0,0,0.6)] backdrop-blur-sm shadow-sm border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-4 flex flex-col gap-6 justify-between">
-                <span className="text-white font-[700] text-[24px] leading-[28px]">
-                  Изделия из ПВХ
+            <div className="grid grid-cols-4 flex-wrap gap-4">
+              <div className="col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6">
+                <span className="text-[#ffab00] font-[700] text-[32px] leading-[28px]">
+                  <Trophy className="w-12 h-12" />
                 </span>
 
-                <span className="text-[#cfcfcf] text-[14px]">
-                  Мы используем высококачественные изделия из ПВХ, которые
-                  идеально подходят для защиты от солнца, дождя и ветра. Эти
-                  универсальные укрытия могут использоваться как на открытых
-                  площадках, так и в закрытых помещениях, обеспечивая надежную
-                  защиту в любых условиях.
+                <span className="text-[#000] text-[16px]">
+                  Опыт изготовления: тентов, пологов, укрытий, навесов, ангаров,
+                  пленочных хранилищ из геомембран, а так же бассейнов -{" "}
+                  <strong className="underline text-[#ffab00]">
+                    более 20 лет!
+                  </strong>
                 </span>
               </div>
 
-              <div className="bg-[rgba(0,0,0,0.6)] backdrop-blur-sm shadow-sm border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-4 flex flex-col gap-6 justify-between">
-                <span className="text-white font-[700] text-[24px] leading-[28px]">
-                  Долговечность и устойчивость
+              <div className="col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6">
+                <span className="text-[#ffab00] font-[700] text-[32px] leading-[28px] flex items-center gap-4">
+                  <ShellIcon className="w-12 h-12" />
                 </span>
 
-                <span className="text-[#cfcfcf] text-[14px]">
+                <span className="text-[#000] text-[16px]">
+                  Мы используем высококачественные{" "}
+                  <strong className="underline text-[#ffab00]">
+                    изделия из ПВХ
+                  </strong>
+                  , которые идеально подходят для защиты от солнца, дождя и
+                  ветра.
+                </span>
+              </div>
+
+              <div className="col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6">
+                <span className="text-[#ffab00] font-[700] text-[32px] leading-[28px] flex items-center gap-4">
+                  <Clock2 className="w-12 h-12" />
+                </span>
+
+                <span className="text-[#000] text-[16px]">
                   Каждое изделие изготовлено из прочного и водоотталкивающего
-                  материала, что гарантирует долговечность и устойчивость к
-                  внешним воздействиям. Мы изготовляем разнообразные размеры и
-                  цвета, чтобы вы могли выбрать идеальное решение.
+                  материала, что гарантирует{" "}
+                  <strong className="underline text-[#ffab00]">
+                    долговечность и устойчивость
+                  </strong>{" "}
+                  к внешним воздействиям.
                 </span>
               </div>
 
-              <div className="bg-[rgba(0,0,0,0.6)] backdrop-blur-sm shadow-sm border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-4 flex flex-col gap-6 justify-between">
-                <span className="text-white font-[700] text-[24px] leading-[28px]">
-                  Практичность и функциональность
+              <div className="col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6">
+                <span className="text-[#ffab00] font-[700] text-[32px] leading-[28px] flex items-center gap-4">
+                  <Settings className="w-12 h-12" />
                 </span>
 
-                <span className="text-[#cfcfcf] text-[14px]">
-                  Наша продукция сочетает в себе практичность и
-                  функциональность, что делает ее отличным выбором для тех, кто
-                  ценит качество и комфорт. Ознакомьтесь с нашим ассортиментом и
-                  найдите идеальный тент или полог для своих нужд!
+                <span className="text-[#000] text-[16px]">
+                  Наша продукция сочетает в себе{" "}
+                  <strong className="underline text-[#ffab00]">
+                    практичность и функциональность
+                  </strong>
+                  , что делает ее отличным выбором для тех, кто ценит качество и
+                  комфорт.
                 </span>
               </div>
             </div>

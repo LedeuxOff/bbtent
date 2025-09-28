@@ -37,7 +37,7 @@ export const MainPageBranchesSection = () => {
               <div
                 className={cn(
                   "items-center bg-[rgba(0,0,0,.4)] rounded-[8px] px-2 text-white hover:bg-[rgba(0,0,0,.6)] swiper-button-prev",
-                  "flex"
+                  "hidden md:flex"
                 )}
               >
                 <ChevronLeft />
@@ -89,15 +89,15 @@ export const MainPageBranchesSection = () => {
               </div>
               <div
                 className={cn(
-                  "absolute top-0 bottom-0 w-30 bg-gradient-to-l from-[#ffffff] to-transparent z-10 pointer-events-none",
-                  "right-12"
+                  "absolute top-0 bottom-0 w-16 md:w-30 bg-gradient-to-l from-[#ffffff] to-transparent z-10 pointer-events-none",
+                  "right-0 md:right-12"
                 )}
               />
 
               <div
                 className={cn(
-                  "flex items-center bg-[rgba(0,0,0,.4)] rounded-[8px] px-2 text-white hover:bg-[rgba(0,0,0,.6)] swiper-button-next relative z-11",
-                  "flex"
+                  "items-center bg-[rgba(0,0,0,.4)] rounded-[8px] px-2 text-white hover:bg-[rgba(0,0,0,.6)] swiper-button-next relative z-11",
+                  "hidden md:flex"
                 )}
               >
                 <ChevronRight />

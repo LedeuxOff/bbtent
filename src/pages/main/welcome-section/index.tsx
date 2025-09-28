@@ -6,14 +6,16 @@ export const MainPageWelcomeSection = () => {
   return (
     <div className="w-full flex justify-center">
       <AppContainer props={{}}>
-        <div className="flex flex-col gap-12 items-center justify-center bg-[#112138cc] py-16 rounded-[16px]">
-          <span className="text-[64px] font-[700] text-white">BBTent</span>
-          <span className="text-[32px] text-center max-w-[810px] font-[500] text-white">
+        <div className="flex flex-col gap-8 md:gap-12 items-center justify-center bg-[#112138cc] py-8 md:py-16 px-4 rounded-[16px]">
+          <span className="text-[48px] md:text-[64px] font-[700] text-white">
+            BBTent
+          </span>
+          <span className="text-[20px] md:text-[32px] text-center max-w-[810px] font-[500] text-white">
             Добро пожаловать в нашу компанию, где мы создаем надежные тенты и
             укрытия, обеспечивающие защиту и комфорт в любых погодных условиях!
           </span>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <Button
               type="button"
               size="lg"
