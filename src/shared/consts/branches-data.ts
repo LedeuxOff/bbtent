@@ -32,7 +32,7 @@ export const BRANCHES_DATA: {
     id: "4",
     key: "selhoz-ukritya",
     label: "Сельхозукрытия",
-    photoCount: 9,
+    photoCount: 1,
     imgSrc: "/branches/selhoz-ukritya-branch.jpg",
   },
   {

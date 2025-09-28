@@ -131,6 +131,6 @@ export const PHOTO_DATA = {
   },
   "selhoz-ukritya": {
     name: "Сельхозукрытия",
-    data: [{ id: "", src: "" }],
+    data: [{ id: "1", src: "/photo/selhoz-ukritya/1.jpg" }],
   },
 };
