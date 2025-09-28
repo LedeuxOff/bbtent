@@ -39,7 +39,7 @@ export const BRANCHES_DATA: {
     id: "5",
     key: "laguni",
     label: "Лагуны",
-    photoCount: 9,
+    photoCount: 14,
     imgSrc: "/branches/laguni-branch.jpg",
   },
   {
@@ -60,7 +60,7 @@ export const BRANCHES_DATA: {
     id: "8",
     key: "krovlya",
     label: "Кровля",
-    photoCount: 9,
+    photoCount: 7,
     imgSrc: "/branches/krovlya-branch.jpg",
   },
   {
