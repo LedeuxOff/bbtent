@@ -27,7 +27,17 @@ export const PHOTO_DATA = {
   },
   "burovie-ukritya": {
     name: "Буровые укрытия",
-    data: [{ id: "", src: "" }],
+    data: [
+      { id: "1", src: "/photo/burovie-ukritya/1.jpg" },
+      { id: "2", src: "/photo/burovie-ukritya/2.jpg" },
+      { id: "3", src: "/photo/burovie-ukritya/3.jpg" },
+      { id: "4", src: "/photo/burovie-ukritya/4.jpg" },
+      { id: "5", src: "/photo/burovie-ukritya/5.jpg" },
+      { id: "6", src: "/photo/burovie-ukritya/6.jpg" },
+      { id: "7", src: "/photo/burovie-ukritya/7.jpg" },
+      { id: "8", src: "/photo/burovie-ukritya/8.jpg" },
+      { id: "9", src: "/photo/burovie-ukritya/9.jpg" },
+    ],
   },
   furi: {
     name: "Тенты на фуры",
