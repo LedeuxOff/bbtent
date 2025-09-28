@@ -2,6 +2,7 @@ import {
   MainPageAboutSection,
   MainPageBranchesSection,
   MainPageFeedbackSection,
+  MainPageGetPriceSection,
   MainPageMapSection,
   MainPageVideoSection,
   MainPageWelcomeSection,
@@ -37,6 +38,7 @@ function Index() {
       <MainPageWelcomeSection />
       <MainPageAboutSection />
       <MainPageBranchesSection />
+      <MainPageGetPriceSection />
       <MainPageFeedbackSection />
       <MainPageFAQSection />
       <MainPageVideoSection />
