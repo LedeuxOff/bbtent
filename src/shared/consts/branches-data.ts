@@ -11,7 +11,7 @@ export const BRANCHES_DATA: {
     id: "1",
     key: "furi",
     label: "Тенты на фуры",
-    photoCount: 9,
+    photoCount: 5,
     imgSrc: "/branches/furi-branch.jpg",
   },
   {

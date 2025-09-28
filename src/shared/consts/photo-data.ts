@@ -41,7 +41,13 @@ export const PHOTO_DATA = {
   },
   furi: {
     name: "Тенты на фуры",
-    data: [{ id: "", src: "" }],
+    data: [
+      { id: "1", src: "/photo/furi/1.jpg" },
+      { id: "2", src: "/photo/furi/2.jpg" },
+      { id: "3", src: "/photo/furi/3.jpg" },
+      { id: "4", src: "/photo/furi/4.jpg" },
+      { id: "5", src: "/photo/furi/5.jpg" },
+    ],
   },
   krovlya: {
     name: "Кровля",
