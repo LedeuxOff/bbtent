@@ -53,7 +53,7 @@ export const BRANCHES_DATA: {
     id: "7",
     key: "paviloni",
     label: "Павильоны",
-    photoCount: 9,
+    photoCount: 12,
     imgSrc: "/branches/paviloni-branch.jpg",
   },
   {
@@ -74,7 +74,7 @@ export const BRANCHES_DATA: {
     id: "10",
     key: "myagkie-okna",
     label: "Мягкие окна",
-    photoCount: 9,
+    photoCount: 4,
     imgSrc: "/branches/myagkie-okna-branch.jpg",
   },
 ];

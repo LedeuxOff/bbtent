@@ -82,11 +82,29 @@ export const PHOTO_DATA = {
   },
   "myagkie-okna": {
     name: "Мягкие окна",
-    data: [{ id: "", src: "" }],
+    data: [
+      { id: "1", src: "/photo/myagkie-okna/1.jpg" },
+      { id: "2", src: "/photo/myagkie-okna/2.jpg" },
+      { id: "3", src: "/photo/myagkie-okna/3.jpg" },
+      { id: "4", src: "/photo/myagkie-okna/4.jpg" },
+    ],
   },
   paviloni: {
     name: "Павильоны",
-    data: [{ id: "", src: "" }],
+    data: [
+      { id: "1", src: "/photo/paviloni/1.jpg" },
+      { id: "2", src: "/photo/paviloni/2.jpg" },
+      { id: "3", src: "/photo/paviloni/3.jpg" },
+      { id: "4", src: "/photo/paviloni/4.jpg" },
+      { id: "5", src: "/photo/paviloni/5.jpg" },
+      { id: "6", src: "/photo/paviloni/6.jpg" },
+      { id: "7", src: "/photo/paviloni/7.jpg" },
+      { id: "8", src: "/photo/paviloni/8.jpg" },
+      { id: "9", src: "/photo/paviloni/9.jpg" },
+      { id: "10", src: "/photo/paviloni/10.jpg" },
+      { id: "11", src: "/photo/paviloni/11.jpg" },
+      { id: "12", src: "/photo/paviloni/12.jpg" },
+    ],
   },
   pricepi: {
     name: "Тенты на прицепы",
