@@ -6,15 +6,10 @@ import {
   MainPageMapSection,
   MainPageVideoSection,
   MainPageWelcomeSection,
-} from "@/pages/main";
-import { MainPageFAQSection } from "@/pages/main/faq-section";
-import { createFileRoute } from "@tanstack/react-router";
+} from "./ui";
+import { MainPageFAQSection } from "./ui/faq-section";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
+export const MainPage = () => {
   // const url =
   //   "https://script.google.com/macros/s/AKfycbxcR9OZUfEM969wzLW6mKYfMnHedgmxNE30xIitgLf1K4Qq8ayfs0Ot5NMBlR7G4sgh/exec";
 
@@ -32,19 +27,6 @@ function Index() {
   //     .catch((error) => console.log(error));
   // };
 
-  return (
-    <div className="flex flex-col gap-8 pt-28">
-      <MainPageWelcomeSection />
-      <MainPageAboutSection />
-      <MainPageBranchesSection />
-      <MainPageGetPriceSection />
-      <MainPageFeedbackSection />
-      <MainPageFAQSection />
-      <MainPageVideoSection />
-      <MainPageMapSection />
-    </div>
-  );
-
   // return (
   //   <div className="p-2">
   //     <h3>Welcome Home!</h3>
@@ -61,4 +43,17 @@ function Index() {
   //     </div>
   //   </div>
   // );
-}
+
+  return (
+    <div className="flex flex-col gap-8 pt-28">
+      <MainPageWelcomeSection />
+      <MainPageAboutSection />
+      <MainPageBranchesSection />
+      <MainPageGetPriceSection />
+      <MainPageFeedbackSection />
+      <MainPageFAQSection />
+      <MainPageVideoSection />
+      <MainPageMapSection />
+    </div>
+  );
+};

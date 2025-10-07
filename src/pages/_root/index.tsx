@@ -1,8 +1,8 @@
 import { AppFooter, AppHeader } from "@/layout";
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
-const RootLayout = () => (
+export const RootLayout = () => (
   <div className="flex flex-col min-h-[200vh]">
     <AppHeader />
     <Outlet />
@@ -10,5 +10,3 @@ const RootLayout = () => (
     <TanStackRouterDevtools />
   </div>
 );
-
-export const Route = createRootRoute({ component: RootLayout });
