@@ -2,6 +2,7 @@ export type BranchDetailDataItemType = {
   name: string;
   description: string;
   data: { id: string; src: string }[];
+  video?: string;
 };
 
 type BranchDetailDataType = {
