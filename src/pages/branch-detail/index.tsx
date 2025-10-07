@@ -104,60 +104,40 @@ export const BranchDetailPage = () => {
 
           <AppGetPriceBanner title="Получите расчет стоимости" />
 
-          <div className="flex flex-col gap-8">
-            <span className="text-[28px] font-[700]">Видео наших работы</span>
-            <div className="flex w-full flex-col gap-6">
-              <Tabs defaultValue="laguni-1" className="gap-6">
-                <TabsList className="bg-[#09090973] py-6 px-2">
-                  <TabsTrigger
-                    value="laguni-1"
-                    className="data-[state=active]:bg-[#ffd58077] text-white py-4 px-4"
-                  >
-                    Видео 1
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="laguni-2"
-                    className="data-[state=active]:bg-[#ffd58077] text-white py-4 px-4"
-                  >
-                    Видео 2
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="laguni-3"
-                    className="data-[state=active]:bg-[#ffd58077] text-white py-4 px-4"
-                  >
-                    Видео 3
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="laguni-1">
-                  <video
-                    height="500"
-                    controls
-                    className="rounded-[16px] max-h-[600px] w-full bg-[#09090973]"
-                  >
-                    <source src="/video/laguni-1.mp4" type="video/mp4" />{" "}
-                  </video>
-                </TabsContent>
-                <TabsContent value="laguni-2">
-                  <video
-                    height="500"
-                    controls
-                    className="rounded-[16px] max-h-[600px] w-full bg-[#09090973]"
-                  >
-                    <source src="/video/laguni-2.mp4" type="video/mp4" />{" "}
-                  </video>
-                </TabsContent>
-                <TabsContent value="laguni-3">
-                  <video
-                    height="500"
-                    controls
-                    className="rounded-[16px] max-h-[600px] w-full bg-[#09090973]"
-                  >
-                    <source src="/video/laguni-3.mp4" type="video/mp4" />{" "}
-                  </video>
-                </TabsContent>
-              </Tabs>
+          {branchData.video.length > 0 && (
+            <div className="flex flex-col gap-8">
+              <span className="text-[28px] font-[700]">Видео наших работ</span>
+              <div className="flex w-full flex-col gap-6">
+                <Tabs
+                  defaultValue={branchData.video[0].value}
+                  className="gap-6"
+                >
+                  <TabsList className="bg-[#09090973] py-6 px-2">
+                    {branchData.video.map((video, index) => (
+                      <TabsTrigger
+                        key={video.value}
+                        value={video.value}
+                        className="data-[state=active]:bg-[#ffd58077] text-white py-4 px-4"
+                      >
+                        {`Видео ${index + 1}`}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                  {branchData.video.map((video) => (
+                    <TabsContent key={video.value} value={video.value}>
+                      <video
+                        height="500"
+                        controls
+                        className="rounded-[16px] max-h-[600px] w-full bg-[#09090973]"
+                      >
+                        <source src={video.src} type="video/mp4" />{" "}
+                      </video>
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="pb-8"></div>
         </div>

@@ -6,7 +6,7 @@ export const MainPageVideoSection = () => {
     <div className="w-full flex justify-center">
       <AppContainer>
         <div className="flex flex-col gap-8">
-          <span className="text-[38px] font-[700]">Видео наших работы</span>
+          <span className="text-[38px] font-[700]">Видео наших работ</span>
           <div className="flex w-full flex-col gap-6">
             <Tabs defaultValue="svarka-1" className="gap-6">
               <TabsList className="bg-[#09090973] py-6 px-2">
