@@ -8,26 +8,30 @@ const phoneValidation = z
     "Неверный формат номера телефона"
   );
 
-export const enrollFormSchema = z
-  .object({
-    categoryKey: z.string(),
-    categoryDetail: z.string(),
+export const enrollFormSchema = z.object({
+  chooseCategoryForm: z
+    .object({
+      categoryKey: z.string().min(1),
+      categoryDetail: z.string(),
+    })
+    .refine(
+      (data) =>
+        data.categoryKey === "any" ? data.categoryDetail.length > 0 : true,
+      {
+        message: "Обязательное поле",
+        path: ["categoryDetail"],
+      }
+    ),
+  personalDataForm: z.object({
     firstName: z.string(),
     lastName: z.string(),
     middleName: z.string().optional().nullable(),
     phone: phoneValidation,
     email: z.email(),
     comment: z.string().nullable().optional(),
-    date: z.string(),
-  })
-  .refine(
-    (data) =>
-      data.categoryKey === "any" ? data.categoryDetail.length > 0 : true,
-    {
-      message: "Обязательное поле",
-      path: ["categoryDetail"],
-    }
-  );
+  }),
+  date: z.string(),
+});
 
 export type EnrollFormValues = z.infer<typeof enrollFormSchema>;
 

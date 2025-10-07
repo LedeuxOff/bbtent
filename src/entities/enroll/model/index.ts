@@ -58,14 +58,18 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
     resolver: zodResolver(enrollFormSchema),
     disabled: fetching,
     values: {
-      categoryKey: categoryKey || "",
-      categoryDetail: "",
-      firstName: "",
-      lastName: "",
-      middleName: "",
-      phone: "",
-      email: "",
-      comment: "",
+      chooseCategoryForm: {
+        categoryKey: categoryKey || "",
+        categoryDetail: "",
+      },
+      personalDataForm: {
+        firstName: "",
+        lastName: "",
+        middleName: "",
+        phone: "",
+        email: "",
+        comment: "",
+      },
       date: "",
     },
   });

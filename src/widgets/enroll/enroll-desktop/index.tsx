@@ -2,9 +2,7 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useEnrollModel } from "@/entities/enroll/model";
@@ -17,6 +15,8 @@ import {
   SuccessSlide,
 } from "./slides";
 import { EnrollHeader } from "./header";
+import { EnrollStepsController } from "./steps-controller";
+import { AppContainer } from "@/shared/ui-kit";
 
 interface EnrollWidgetProps {
   categoryKey?: string;
@@ -38,26 +38,39 @@ export const EnrollDesktopWidget = ({ categoryKey }: EnrollWidgetProps) => {
           Расчет стоимости
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-full min-w-full">
+      <SheetContent className="w-full min-w-full [&>button]:hidden">
         <SheetHeader className="p-0">
-          <EnrollHeader form={form} slide={slide} />
+          <EnrollHeader slide={slide} onOpenChange={onOpenChange} />
         </SheetHeader>
-        <div className="">
-          {slide.key === "choose-category" && (
-            <ChooseCategorySlide form={form} setSlide={setSlide} />
-          )}
-          {slide.key === "fill-fields" && (
-            <FillFieldsSlide form={form} setSlide={setSlide} />
-          )}
-          {slide.key === "check-data" && (
-            <CheckDataSlide form={form} setSlide={setSlide} />
-          )}
-          {slide.key === "success" && (
-            <SuccessSlide form={form} setSlide={setSlide} />
-          )}
-          {slide.key === "error" && (
-            <ErrorSlide form={form} setSlide={setSlide} />
-          )}
+        <div className="flex justify-center">
+          <AppContainer>
+            <div className="flex gap-4">
+              <div className="flex-1">
+                {slide.key === "choose-category" && (
+                  <ChooseCategorySlide form={form} />
+                )}
+                {slide.key === "fill-fields" && (
+                  <FillFieldsSlide form={form} setSlide={setSlide} />
+                )}
+                {slide.key === "check-data" && (
+                  <CheckDataSlide form={form} setSlide={setSlide} />
+                )}
+                {slide.key === "success" && (
+                  <SuccessSlide form={form} setSlide={setSlide} />
+                )}
+                {slide.key === "error" && (
+                  <ErrorSlide form={form} setSlide={setSlide} />
+                )}
+              </div>
+
+              <EnrollStepsController
+                form={form}
+                slide={slide}
+                setSlide={setSlide}
+                onSubmit={onSubmit}
+              />
+            </div>
+          </AppContainer>
         </div>
       </SheetContent>
     </Sheet>

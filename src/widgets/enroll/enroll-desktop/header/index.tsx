@@ -1,20 +1,16 @@
 import { SheetTitle } from "@/components/ui/sheet";
 import { SLIDES_DATA } from "@/entities/enroll/model/consts";
-import type {
-  EnrollFormValues,
-  SlideType,
-} from "@/entities/enroll/model/types";
+import type { SlideType } from "@/entities/enroll/model/types";
 import { cn } from "@/lib/utils";
 import { AppContainer } from "@/shared/ui-kit";
 import { XIcon } from "lucide-react";
-import type { UseFormReturn } from "react-hook-form";
 
 interface EnrollHeaderProps {
-  form: UseFormReturn<EnrollFormValues>;
   slide: SlideType;
+  onOpenChange: (value: boolean) => void;
 }
 
-export const EnrollHeader = ({ form, slide }: EnrollHeaderProps) => {
+export const EnrollHeader = ({ slide, onOpenChange }: EnrollHeaderProps) => {
   return (
     <>
       <div className="flex justify-center">
@@ -30,7 +26,7 @@ export const EnrollHeader = ({ form, slide }: EnrollHeaderProps) => {
           <XIcon
             className="w-6 h-6 cursor-pointer"
             onClick={() => {
-              form.reset();
+              onOpenChange(false);
             }}
           />
         </AppContainer>
