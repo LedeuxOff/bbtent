@@ -38,7 +38,7 @@ export const AppLink = ({ props, children }: AppLinkProps) => {
         <span className="relative z-10">{children}</span>
         <span
           className={`absolute bottom-0 left-0 h-0.5 bg-[#ffd580] transition-all duration-300 w-0 group-hover:w-full`}
-        ></span>
+        />
       </span>
     </a>
   );

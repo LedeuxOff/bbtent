@@ -4,7 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { AtSign, PhoneIcon } from "lucide-react";
+import { AtSignIcon, PhoneIcon } from "lucide-react";
 
 export const AppContacts = () => {
   return (
@@ -22,26 +22,60 @@ export const AppContacts = () => {
         align="end"
         alignOffset={-26}
         sideOffset={26}
-        className="bg-[rgba(9,9,9,0.45)] backdrop-blur-sm rounded-[18px] px-6 py-4 border-none shadow-none"
+        className="bg-[rgba(9,9,9,0.45)] backdrop-blur-sm rounded-[18px] px-6 py-4 border-none shadow-none w-auto"
       >
         <div className="flex flex-col gap-2 text-white">
-          <a href="tel:+79272286248" className="flex gap-2 items-center">
-            <PhoneIcon className="w-5 h-5" />
-            <span>+7 927 228 62 48</span>
-          </a>
+          <div className="flex gap-2 group relative">
+            <PhoneIcon className="group-hover:text-[#c4b089]" />
+            <a
+              href="tel:+79271478165"
+              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+            >
+              +7 927 147 81 65
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-[#ffd580] transition-all duration-300 w-0 group-hover:w-full`}
+              />
+            </a>
+          </div>
 
-          <a href="tel:+79063175958" className="flex gap-2 items-center">
-            <PhoneIcon className="w-5 h-5" />
-            <span>+7 906 317 59 58</span>
-          </a>
+          <div className="flex gap-2 group relative">
+            <PhoneIcon className="group-hover:text-[#c4b089]" />
+            <a
+              href="tel:+79272286248"
+              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+            >
+              +7 927 228 62 48
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-[#ffd580] transition-all duration-300 w-0 group-hover:w-full`}
+              />
+            </a>
+          </div>
 
-          <a
-            href="mailto:bokovandrey0015@gmail.com"
-            className="flex gap-2 items-center"
-          >
-            <AtSign className="w-5 h-5" />
-            <span>bokovandrey0015@gmail.com</span>
-          </a>
+          <div className="flex gap-2 group relative">
+            <PhoneIcon className="group-hover:text-[#c4b089]" />
+            <a
+              href="tel:+79063175958"
+              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+            >
+              +7 906 317 59 58
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-[#ffd580] transition-all duration-300 w-0 group-hover:w-full`}
+              />
+            </a>
+          </div>
+
+          <div className="flex gap-2 group relative">
+            <AtSignIcon className="group-hover:text-[#c4b089]" />
+            <a
+              href="mailto:bokovandrey0015@gmail.com"
+              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+            >
+              bb.tent@yandex.ru
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-[#ffd580] transition-all duration-300 w-0 group-hover:w-full`}
+              />
+            </a>
+          </div>
         </div>
       </PopoverContent>
     </Popover>
