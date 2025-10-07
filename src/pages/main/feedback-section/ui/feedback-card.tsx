@@ -51,8 +51,8 @@ export const FeedbackCard = ({ feedback, className }: FeedbackCardProps) => {
           )}
         </div>
       </div>
-      <div className="flex gap-4">
-        <img src="/user.png" className="w-16" />
+      <div className="flex gap-4 items-center">
+        <img src="/user.png" className="w-16 h-16" />
         <div className="flex flex-col gap-1">
           <span className="font-[700] text-[18px]">{feedback.author}</span>
           <span className="text-gray-500">{feedback.date}</span>

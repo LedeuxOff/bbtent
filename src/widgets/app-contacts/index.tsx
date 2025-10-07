@@ -26,10 +26,10 @@ export const AppContacts = () => {
       >
         <div className="flex flex-col gap-2 text-white">
           <div className="flex gap-2 group relative">
-            <PhoneIcon className="group-hover:text-[#c4b089]" />
+            <PhoneIcon className="group-hover:text-[#ffd580]" />
             <a
               href="tel:+79271478165"
-              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+              className="flex gap-2 items-center group-hover:text-[#ffd580] transition-all relative"
             >
               +7 927 147 81 65
               <span
@@ -39,10 +39,10 @@ export const AppContacts = () => {
           </div>
 
           <div className="flex gap-2 group relative">
-            <PhoneIcon className="group-hover:text-[#c4b089]" />
+            <PhoneIcon className="group-hover:text-[#ffd580]" />
             <a
               href="tel:+79272286248"
-              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+              className="flex gap-2 items-center group-hover:text-[#ffd580] transition-all relative"
             >
               +7 927 228 62 48
               <span
@@ -52,10 +52,10 @@ export const AppContacts = () => {
           </div>
 
           <div className="flex gap-2 group relative">
-            <PhoneIcon className="group-hover:text-[#c4b089]" />
+            <PhoneIcon className="group-hover:text-[#ffd580]" />
             <a
               href="tel:+79063175958"
-              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+              className="flex gap-2 items-center group-hover:text-[#ffd580] transition-all relative"
             >
               +7 906 317 59 58
               <span
@@ -65,10 +65,10 @@ export const AppContacts = () => {
           </div>
 
           <div className="flex gap-2 group relative">
-            <AtSignIcon className="group-hover:text-[#c4b089]" />
+            <AtSignIcon className="group-hover:text-[#ffd580]" />
             <a
               href="mailto:bokovandrey0015@gmail.com"
-              className="flex gap-2 items-center group-hover:text-[#c4b089] transition-all relative"
+              className="flex gap-2 items-center group-hover:text-[#ffd580] transition-all relative"
             >
               bb.tent@yandex.ru
               <span
