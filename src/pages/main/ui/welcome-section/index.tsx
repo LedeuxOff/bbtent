@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { AppContainer } from "@/shared/ui-kit";
-import { BadgeRussianRubleIcon, MailIcon } from "lucide-react";
+import { EnrollDesktopWidget } from "@/widgets";
+import { MailIcon } from "lucide-react";
 
 export const MainPageWelcomeSection = () => {
   return (
@@ -17,14 +18,7 @@ export const MainPageWelcomeSection = () => {
           </span>
 
           <div className="flex flex-col md:flex-row gap-4">
-            <Button
-              type="button"
-              size="lg"
-              className="bg-[#ffd58077] font-[600] border-none text-white cursor-pointer hover:bg-[#ffd580AA] hover:text-white py-8 px-12 text-[16px]"
-            >
-              <BadgeRussianRubleIcon className="w-10! h-10!" />
-              Расчет стоимости
-            </Button>
+            <EnrollDesktopWidget />
             <Button
               size="lg"
               type="button"
