@@ -1,4 +1,14 @@
-export const PHOTO_DATA = {
+export type BranchDetailDataItemType = {
+  name: string;
+  description: string;
+  data: { id: string; src: string }[];
+};
+
+type BranchDetailDataType = {
+  [key: string]: BranchDetailDataItemType;
+};
+
+export const BRANCHES_DETAIL_DATA: BranchDetailDataType = {
   angari: {
     name: "Ангары",
     description:

@@ -1,8 +1,6 @@
-import type { PHOTO_DATA } from "./photo-data";
-
 export const BRANCHES_DATA: {
   id: string;
-  key: keyof typeof PHOTO_DATA;
+  key: string;
   label: string;
   photoCount: number;
   imgSrc: string;
