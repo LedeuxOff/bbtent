@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "@tanstack/react-router";
 import { BadgeRussianRubleIcon } from "lucide-react";
 
 interface AppGetPriceBannerProps {
@@ -46,9 +47,9 @@ export const AppGetPriceBanner = ({ title }: AppGetPriceBannerProps) => (
 
       <span className="text-gray-400 text-[14px]">
         Нажимая кнопку "Получить расчет", Вы соглашаетесь с{" "}
-        <a href="/" className="underline">
+        <Link to="/privacy-policy" className="underline">
           Политикой конфиденциальности
-        </a>
+        </Link>
       </span>
     </div>
 

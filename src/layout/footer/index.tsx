@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { navigationData } from "@/shared/consts";
 import { AppContainer, AppLink } from "@/shared/ui-kit";
+import { Link } from "@tanstack/react-router";
 
 export const AppFooter = () => {
   return (
@@ -11,8 +12,9 @@ export const AppFooter = () => {
             {navigationData.map((link) => (
               <AppLink
                 key={link.id}
+                anchor={link.anchor}
                 props={{
-                  href: link.anchor,
+                  href: link.href,
                   className:
                     "font-[600] hover:text-[#ffd580] transition-colors",
                 }}
@@ -25,18 +27,18 @@ export const AppFooter = () => {
           <Separator />
 
           <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:items-center">
-            <a href="/">
+            <Link to="/">
               <div className="flex gap-2 items-center">
                 <img src="/logo.jpg" className="w-10 h-10 rounded-[4px]" />
                 <span className="text-white font-[600] text-[24px]">
                   BBTent
                 </span>
               </div>
-            </a>
+            </Link>
 
-            <a href="/" className="text-white underline">
+            <Link to="/privacy-policy" className="text-white underline">
               Политика конфиденциальности
-            </a>
+            </Link>
           </div>
 
           <span className="text-white">

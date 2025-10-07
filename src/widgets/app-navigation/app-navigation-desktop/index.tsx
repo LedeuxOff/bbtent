@@ -7,8 +7,9 @@ export const AppNavigationDesktop = () => {
       {navigationData.map((link) => (
         <AppLink
           key={link.id}
+          anchor={link.anchor}
           props={{
-            href: link.anchor,
+            href: link.href,
             className: "font-[600] hover:text-[#ffd580] transition-colors",
           }}
         >

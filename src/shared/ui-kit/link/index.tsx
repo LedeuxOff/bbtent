@@ -3,6 +3,7 @@ import { useRouter } from "@tanstack/react-router";
 import type { DetailedHTMLProps, ReactNode } from "react";
 
 interface AppLinkProps {
+  anchor: string;
   props?: DetailedHTMLProps<
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
     HTMLAnchorElement
@@ -10,17 +11,19 @@ interface AppLinkProps {
   children?: ReactNode;
 }
 
-export const AppLink = ({ props, children }: AppLinkProps) => {
+export const AppLink = ({ anchor, props, children }: AppLinkProps) => {
   const router = useRouter();
 
   const handleGo = () => {
     router.navigate({ to: props?.href });
 
-    if (props?.href) {
-      const element = document.getElementById(props.href as string);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+    if (anchor) {
+      setTimeout(() => {
+        const element = document.getElementById(anchor as string);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
