@@ -11,8 +11,9 @@ export const MainPageWelcomeSection = () => {
             BBTent
           </span>
           <span className="text-[20px] md:text-[32px] text-center max-w-[810px] font-[500] text-white">
-            Добро пожаловать в нашу компанию, где мы создаем надежные тенты и
-            укрытия, обеспечивающие защиту и комфорт в любых погодных условиях!
+            Добро пожаловать в нашу компанию, где мы создаем тентовые укрытия и
+            гидроизоляцию, обеспечивающие защиту и комфорт в любых погодных
+            условиях!
           </span>
 
           <div className="flex flex-col md:flex-row gap-4">
