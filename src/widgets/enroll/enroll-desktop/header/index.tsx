@@ -8,9 +8,14 @@ import { XIcon } from "lucide-react";
 interface EnrollHeaderProps {
   slide: SlideType;
   onOpenChange: (value: boolean) => void;
+  status: "error" | "success" | undefined;
 }
 
-export const EnrollHeader = ({ slide, onOpenChange }: EnrollHeaderProps) => {
+export const EnrollHeader = ({
+  slide,
+  onOpenChange,
+  status,
+}: EnrollHeaderProps) => {
   return (
     <>
       <div className="flex justify-center">
@@ -39,8 +44,8 @@ export const EnrollHeader = ({ slide, onOpenChange }: EnrollHeaderProps) => {
               "h-1 flex-1",
               index + 1 > slide.step ? "bg-[#e6e6e6]" : "bg-[#f2db20]",
               slide.key === "check-data" && "bg-[#4d95ff]",
-              item.key === "success" && "bg-[#21df9b]",
-              item.key === "error" && "bg-red-500"
+              status === "success" && "bg-[#21df9b]",
+              status === "error" && "bg-red-500"
             )}
           />
         ))}

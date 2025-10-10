@@ -9,25 +9,16 @@ const phoneValidation = z
   );
 
 export const enrollFormSchema = z.object({
-  chooseCategoryForm: z
-    .object({
-      categoryKey: z.string().min(1),
-      categoryDetail: z.string(),
-    })
-    .refine(
-      (data) =>
-        data.categoryKey === "any" ? data.categoryDetail.length > 0 : true,
-      {
-        message: "Обязательное поле",
-        path: ["categoryDetail"],
-      }
-    ),
+  chooseCategoryForm: z.object({
+    categoryKey: z.string().min(1),
+  }),
   personalDataForm: z.object({
-    firstName: z.string(),
-    lastName: z.string(),
+    firstName: z.string().min(1, "Обязательное поле"),
+    lastName: z.string().min(1, "Обязательное поле"),
     middleName: z.string().optional().nullable(),
     phone: phoneValidation,
-    email: z.email(),
+    email: z.email("Некорректный адрес"),
+    categoryDetail: z.string().nullable().optional(),
     comment: z.string().nullable().optional(),
   }),
   date: z.string(),

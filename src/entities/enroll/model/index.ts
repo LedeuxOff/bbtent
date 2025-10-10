@@ -30,26 +30,12 @@ interface UseEnrollModelProps {
 //     .catch((error) => console.log(error));
 // };
 
-// return (
-//   <div className="p-2">
-//     <h3>Welcome Home!</h3>
-
-//     <div>
-//       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-//         <input name="fullName" placeholder="FullName" />
-//         <input name="email" placeholder="Email" />
-//         <input name="phone" placeholder="Phone" />
-//         <input name="service" placeholder="Service" />
-//         <input name="comment" placeholder="Comment" />
-//         <button>Add</button>
-//       </form>
-//     </div>
-//   </div>
-// );
-
 export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
   const [fetching, setFetching] = useState(false);
   const [open, setOpen] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | undefined>(
+    undefined
+  );
   const [slide, setSlide] = useState<SlideType>(
     SLIDES_DATA[categoryKey ? 1 : 0]
   );
@@ -60,7 +46,6 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
     values: {
       chooseCategoryForm: {
         categoryKey: categoryKey || "",
-        categoryDetail: "",
       },
       personalDataForm: {
         firstName: "",
@@ -69,6 +54,7 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
         phone: "",
         email: "",
         comment: "",
+        categoryDetail: "",
       },
       date: "",
     },
@@ -86,11 +72,13 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
 
     setTimeout(() => {
       setFetching(false);
+      setStatus("success");
     }, 1000);
   });
 
   const onOpenChange = (value: boolean) => {
     form.reset();
+    setStatus(undefined);
     setSlide(SLIDES_DATA[0]);
     setOpen(value);
   };
@@ -103,5 +91,7 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
     setSlide,
     onOpenChange,
     open,
+    status,
+    setStatus,
   };
 };

@@ -34,6 +34,7 @@ export const EnrollStepsController = ({
   const handleNext = () => {
     if (slide.key === "choose-category") {
       form.trigger("chooseCategoryForm").then((validateResult) => {
+        console.log(form.formState.errors);
         if (validateResult) {
           setSlide(SLIDES_DATA[1]);
         } else {
@@ -82,7 +83,7 @@ export const EnrollStepsController = ({
                 {item.step === 1 && <TentIcon />}
                 {item.step === 2 && <ClipboardIcon />}
                 {item.step === 3 && <MailCheckIcon />}
-                {(slide.step > item.step || slide.step === 3) && (
+                {slide.step > item.step && (
                   <div className="absolute bottom-[-6px] right-[-6px] rounded-full p-1 flex items-center justify-center bg-green-600">
                     <CheckIcon className="text-white w-3 h-3" />
                   </div>
