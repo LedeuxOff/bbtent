@@ -14,13 +14,13 @@ export const MainPageVideoSection = () => {
                   value="svarka-1"
                   className="data-[state=active]:bg-[#ffd58077] text-white py-4 px-4"
                 >
-                  Название 1
+                  Сварка геомембраны
                 </TabsTrigger>
                 <TabsTrigger
                   value="svarka-PVH"
                   className="data-[state=active]:bg-[#ffd58077] text-white py-4 px-4"
                 >
-                  Сварка ПВХ машинкой
+                  Сварка ПВХ
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="svarka-1">
