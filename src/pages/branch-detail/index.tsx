@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import { BRANCHES_DETAIL_DATA } from "@/shared/consts/branches-detail-data";
 import { AppContainer } from "@/shared/ui-kit";
 import { useParams, useRouter } from "@tanstack/react-router";
-import { BadgeRussianRubleIcon, ChevronLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { BranchDetailMobileImagesViewer } from "./mobile-images-viewer";
 import { ImagesViewer } from "../main/ui/branches-section/ui/images-viewer";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { AppGetPriceBanner } from "@/widgets";
+import { AppGetPriceBanner, EnrollWidget } from "@/widgets";
 
 export const BranchDetailPage = () => {
   const [open, setOpen] = useState(false);
@@ -50,16 +50,7 @@ export const BranchDetailPage = () => {
               {branchData.description}
             </span>
 
-            <div>
-              <Button
-                type="button"
-                size="lg"
-                className="bg-[#ffd58077] font-[600] border-none text-white cursor-pointer hover:bg-[#ffd580AA] hover:text-white py-8 px-12 text-[16px]"
-              >
-                <BadgeRussianRubleIcon className="w-10! h-10!" />
-                Расчет стоимости
-              </Button>
-            </div>
+            {id && <EnrollWidget categoryKey={id} />}
           </div>
 
           <span className="text-[28px] font-[700]">Фото наших работ</span>
@@ -102,7 +93,10 @@ export const BranchDetailPage = () => {
             )}
           </div>
 
-          <AppGetPriceBanner title="Получите расчет стоимости" />
+          <AppGetPriceBanner
+            title="Получите расчет стоимости"
+            categoryKey={id}
+          />
 
           {branchData.video.length > 0 && (
             <div className="flex flex-col gap-8">

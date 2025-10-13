@@ -14,8 +14,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "@tanstack/react-router";
+import { useInView } from "react-intersection-observer";
 
 export const MainPageBranchesSection = () => {
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   const { navigate } = useRouter();
   const swiperRef = useRef<HTMLDivElement>(null);
   const { cardWidth: CARD_WIDTH } = useResponsiveValues({
@@ -26,9 +37,23 @@ export const MainPageBranchesSection = () => {
     <div id="#branches" className="w-full flex justify-center">
       <AppContainer>
         <div className="flex flex-col gap-8">
-          <span className="text-[38px] font-[700]">Наши направления</span>
+          <span
+            ref={ref1}
+            className={cn(
+              "text-[38px] font-[700] transition-all duration-1000 ease-out",
+              inView1 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}
+          >
+            Наши направления
+          </span>
 
-          <div className="flex gap-2 relative">
+          <div
+            ref={ref2}
+            className={cn(
+              "flex gap-2 relative transition-all duration-1000 ease-out",
+              inView2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}
+          >
             <div
               className={cn(
                 "items-center bg-[rgba(0,0,0,.4)] rounded-[8px] px-2 text-white hover:bg-[rgba(0,0,0,.6)] swiper-button-prev",

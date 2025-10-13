@@ -22,20 +22,17 @@ export const FillFieldsSlide = ({ form }: FillFieldsSlideProps) => {
 
   return (
     <div className="flex flex-col gap-8">
-      <span className="text-[36px] font-[800]">Заполните данные</span>
+      <span className="text-[24px] md:text-[36px] md:px-0 font-[600] md:font-[800]">
+        Заполните данные
+      </span>
 
       <Form {...form}>
-        <form
-          className={cn(
-            "grid gap-6 max-h-screen pb-[210px] overflow-auto",
-            `grid-cols-12`
-          )}
-        >
+        <form className={cn("grid gap-6", `grid-cols-12`)}>
           <FormField
             control={form.control}
             name="personalDataForm.lastName"
             render={(controller) => (
-              <FormItem className="col-span-4 relative">
+              <FormItem className="col-span-12 md:col-span-4 relative">
                 <FormLabel>Фамилия</FormLabel>
                 <FormControl>
                   <Input
@@ -55,7 +52,7 @@ export const FillFieldsSlide = ({ form }: FillFieldsSlideProps) => {
             control={form.control}
             name="personalDataForm.firstName"
             render={(controller) => (
-              <FormItem className="col-span-4 relative">
+              <FormItem className="col-span-12 md:col-span-4 relative">
                 <FormLabel>Имя</FormLabel>
                 <FormControl>
                   <Input
@@ -75,7 +72,7 @@ export const FillFieldsSlide = ({ form }: FillFieldsSlideProps) => {
             control={form.control}
             name="personalDataForm.middleName"
             render={(controller) => (
-              <FormItem className="col-span-4 relative">
+              <FormItem className="col-span-12 md:col-span-4 relative">
                 <FormLabel>Отчество</FormLabel>
                 <FormControl>
                   <Input
@@ -96,7 +93,7 @@ export const FillFieldsSlide = ({ form }: FillFieldsSlideProps) => {
             control={form.control}
             name="personalDataForm.email"
             render={(controller) => (
-              <FormItem className="col-span-6 relative">
+              <FormItem className="col-span-12 md:col-span-6 relative">
                 <FormLabel>Почта</FormLabel>
                 <FormControl>
                   <Input
@@ -118,7 +115,7 @@ export const FillFieldsSlide = ({ form }: FillFieldsSlideProps) => {
             control={form.control}
             name="personalDataForm.phone"
             render={(controller) => (
-              <FormItem className="col-span-6 relative">
+              <FormItem className="col-span-12 md:col-span-6 relative">
                 <FormLabel>Телефон</FormLabel>
                 <FormControl>
                   <PatternFormat

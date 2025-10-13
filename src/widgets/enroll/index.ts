@@ -1,1 +1,1 @@
-export { EnrollDesktopWidget } from "./enroll-desktop";
+export { EnrollWidget } from "./enroll-desktop";

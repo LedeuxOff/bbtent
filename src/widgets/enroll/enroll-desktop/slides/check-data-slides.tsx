@@ -14,13 +14,17 @@ export const CheckDataSlide = ({ form }: CheckDataSlideProps) => {
       : BRANCHES_DETAIL_DATA[formValues.chooseCategoryForm.categoryKey].name;
 
   return (
-    <div className="flex flex-col gap-8 max-h-screen pb-36 overflow-auto">
-      <span className="text-[36px] font-[800]">Проверьте данные</span>
+    <div className="flex flex-col gap-8">
+      <span className="text-[24px] md:text-[36px] md:px-0 font-[600] md:font-[800]">
+        Проверьте данные
+      </span>
 
       <div className="flex flex-col gap-4">
-        <div className="bg-[#f8f8f8] rounded-[16px] p-8 flex flex-col gap-8">
+        <div className="bg-[#f8f8f8] rounded-[16px] p-4 md:p-8 flex flex-col gap-8">
           <div className="flex justify-between items-center">
-            <span className="text-[24px] font-[700]">Услуга</span>
+            <span className="text-[18px] md:text-[24px] font-[700]">
+              Услуга
+            </span>
           </div>
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-end gap-3">
@@ -33,9 +37,11 @@ export const CheckDataSlide = ({ form }: CheckDataSlideProps) => {
           </div>
         </div>
 
-        <div className="bg-[#f8f8f8] rounded-[16px] p-8 flex flex-col gap-8">
+        <div className="bg-[#f8f8f8] rounded-[16px] p-4 md:p-8 flex flex-col gap-8">
           <div className="flex justify-between items-center">
-            <span className="text-[24px] font-[700]">Заявитель</span>
+            <span className="text-[18px] md:text-[24px] font-[700]">
+              Заявитель
+            </span>
           </div>
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-end gap-3">

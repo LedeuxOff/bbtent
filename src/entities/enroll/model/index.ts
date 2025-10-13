@@ -5,24 +5,36 @@ import {
   type EnrollFormValues,
   type SlideType,
 } from "./types";
-import { useState } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { format } from "date-fns";
 import { SLIDES_DATA } from "./consts";
 import { BRANCHES_DETAIL_DATA } from "@/shared/consts/branches-detail-data";
+import { toast } from "sonner";
 
 interface UseEnrollModelProps {
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
   categoryKey?: string;
 }
 
-export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
+export const useEnrollModel = ({
+  open,
+  setOpen,
+  categoryKey,
+}: UseEnrollModelProps) => {
   const [fetching, setFetching] = useState(false);
-  const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | undefined>(
     undefined
   );
   const [slide, setSlide] = useState<SlideType>(
     SLIDES_DATA[categoryKey ? 1 : 0]
   );
+
+  useEffect(() => {
+    if (categoryKey) {
+      setSlide(SLIDES_DATA[1]);
+    }
+  }, [categoryKey]);
 
   const form = useForm<EnrollFormValues>({
     resolver: zodResolver(enrollFormSchema),
@@ -62,7 +74,9 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
     const url =
       "https://script.google.com/macros/s/AKfycbxcR9OZUfEM969wzLW6mKYfMnHedgmxNE30xIitgLf1K4Qq8ayfs0Ot5NMBlR7G4sgh/exec";
 
-    const message = encodeURIComponent(`Новая заявка!`);
+    const message = encodeURIComponent(
+      `Новая заявка на ${variables.categoryLabel} от ${variables.personalDataForm.lastName} ${variables.personalDataForm.firstName} `
+    );
     const tgURL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}`;
 
     try {
@@ -93,6 +107,33 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
     setOpen(value);
   };
 
+  const handleNextSlide = () => {
+    if (slide.key === "choose-category") {
+      form.trigger("chooseCategoryForm").then((validateResult) => {
+        console.log(form.formState.errors);
+        if (validateResult) {
+          setSlide(SLIDES_DATA[1]);
+        } else {
+          toast.error("Выберите услугу");
+        }
+      });
+    }
+
+    if (slide.key === "fill-fields") {
+      form.trigger("personalDataForm").then((validateResult) => {
+        if (validateResult) {
+          setSlide(SLIDES_DATA[2]);
+        } else {
+          toast.error("Проверьте правильность заполнения полей");
+        }
+      });
+    }
+  };
+
+  const handlePrevSlide = () => {
+    setSlide(SLIDES_DATA[slide.step - 2]);
+  };
+
   return {
     form,
     onSubmit,
@@ -103,5 +144,7 @@ export const useEnrollModel = ({ categoryKey }: UseEnrollModelProps) => {
     open,
     status,
     setStatus,
+    handleNextSlide,
+    handlePrevSlide,
   };
 };

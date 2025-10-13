@@ -11,55 +11,28 @@ import {
   MailCheckIcon,
   TentIcon,
 } from "lucide-react";
-import type { Dispatch, SetStateAction } from "react";
 import type { UseFormReturn } from "react-hook-form";
-import { toast } from "sonner";
 
 interface EnrollStepsControllerProps {
   form: UseFormReturn<EnrollFormValues>;
   slide: SlideType;
-  setSlide: Dispatch<SetStateAction<SlideType>>;
   onSubmit: (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     e?: React.BaseSyntheticEvent<object, any, any> | undefined
   ) => Promise<void>;
+  handleNextSlide: () => void;
+  handlePrevSlide: () => void;
 }
 
 export const EnrollStepsController = ({
   form,
   slide,
-  setSlide,
+  handleNextSlide,
+  handlePrevSlide,
   onSubmit,
 }: EnrollStepsControllerProps) => {
-  const handleNext = () => {
-    if (slide.key === "choose-category") {
-      form.trigger("chooseCategoryForm").then((validateResult) => {
-        console.log(form.formState.errors);
-        if (validateResult) {
-          setSlide(SLIDES_DATA[1]);
-        } else {
-          toast.error("Выберите услугу");
-        }
-      });
-    }
-
-    if (slide.key === "fill-fields") {
-      form.trigger("personalDataForm").then((validateResult) => {
-        if (validateResult) {
-          setSlide(SLIDES_DATA[2]);
-        } else {
-          toast.error("Проверьте правильность заполнения полей");
-        }
-      });
-    }
-  };
-
-  const handlePrev = () => {
-    setSlide(SLIDES_DATA[slide.step - 2]);
-  };
-
   return (
-    <div className="flex flex-row lg:flex-col items-start justify-between p-6 bg-[#f8f8f8] rounded-[16px] max-h-fit">
+    <div className="hidden md:flex flex-row lg:flex-col items-start justify-between p-6 bg-[#f8f8f8] rounded-[16px] max-h-fit">
       {SLIDES_DATA.slice(0, 3).map((item) => (
         <>
           {item.step !== 1 && (
@@ -107,7 +80,7 @@ export const EnrollStepsController = ({
             type="button"
             variant="outline"
             className="p-6 bg-white shadow-none border-none"
-            onClick={handlePrev}
+            onClick={handlePrevSlide}
             disabled={form.formState.disabled}
           >
             Назад
@@ -127,7 +100,7 @@ export const EnrollStepsController = ({
           <Button
             type="button"
             className="p-6"
-            onClick={handleNext}
+            onClick={handleNextSlide}
             disabled={form.formState.disabled}
           >
             Продолжить
