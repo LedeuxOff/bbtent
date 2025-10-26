@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AppContainer } from "@/shared/ui-kit";
-import { EnrollWidget } from "@/widgets";
-import { MailIcon } from "lucide-react";
+import { ContactsWidget, EnrollWidget } from "@/widgets";
 import { useInView } from "react-intersection-observer";
 
 export const MainPageWelcomeSection = () => {
@@ -51,19 +49,7 @@ export const MainPageWelcomeSection = () => {
                   : "opacity-0 -translate-x-10"
               )}
             />
-            <Button
-              size="lg"
-              type="button"
-              className={cn(
-                "bg-[#80b1ff77] font-[600] border-none text-white cursor-pointer hover:bg-[#80b1ffAA] hover:text-white py-8 px-12 text-[16px] transition-all duration-1000 ease-out",
-                inView2
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
-              )}
-            >
-              <MailIcon className="w-10! h-10!" />
-              Напишите нам
-            </Button>
+            <ContactsWidget ref={ref2} inView={inView2} />
           </div>
         </div>
       </AppContainer>

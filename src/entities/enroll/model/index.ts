@@ -56,8 +56,8 @@ export const useEnrollModel = ({
     },
   });
 
-  const BOT_TOKEN = "7844701764:AAHm-GruIJ6mJSxwIEVFeWORfpx9D4hu4Po";
-  const CHAT_ID = "424493509";
+  // const BOT_TOKEN = "7844701764:AAHm-GruIJ6mJSxwIEVFeWORfpx9D4hu4Po";
+  // const CHAT_ID = "424493509";
 
   const onSubmit = form.handleSubmit(async (values) => {
     setFetching(true);
@@ -72,32 +72,18 @@ export const useEnrollModel = ({
     };
 
     const url =
-      "https://script.google.com/macros/s/AKfycbxcR9OZUfEM969wzLW6mKYfMnHedgmxNE30xIitgLf1K4Qq8ayfs0Ot5NMBlR7G4sgh/exec";
+      "https://script.google.com/macros/s/AKfycbxewIHaPjg0s4iCvZBpMNOL2ilHGYr5FqMjMLSYr5GoA3P7yD3MfSj3KiNTM6nq48gQyA/exec";
 
-    const message = encodeURIComponent(
-      `Новая заявка на ${variables.categoryLabel} от ${variables.personalDataForm.lastName} ${variables.personalDataForm.firstName} `
-    );
-    const tgURL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}`;
-
-    try {
-      const response = await fetch(tgURL);
-      if (response.ok) {
-        console.log("Успешно!");
-      }
-    } catch (e) {
-      console.error("Ошибка:", e);
-    }
-
-    // fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-    //   },
-    //   body: `lastName=${encodeURIComponent(variables.personalDataForm.lastName)}&firstName=${encodeURIComponent(variables.personalDataForm.firstName)}&middleName=${encodeURIComponent(variables.personalDataForm.middleName || "")}&email=${encodeURIComponent(variables.personalDataForm.email)}&phone=${encodeURIComponent(variables.personalDataForm.phone)}&categoryLabel=${encodeURIComponent(variables.categoryLabel)}&comment=${encodeURIComponent(variables.personalDataForm.comment || "")}&categoryDetail=${encodeURIComponent(variables.personalDataForm.categoryDetail || "")}`,
-    // })
-    //   .then((res) => res.text())
-    //   .then((data) => alert(data))
-    //   .catch((error) => console.log(error));
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      },
+      body: `lastName=${encodeURIComponent(variables.personalDataForm.lastName)}&firstName=${encodeURIComponent(variables.personalDataForm.firstName)}&middleName=${encodeURIComponent(variables.personalDataForm.middleName || "")}&email=${encodeURIComponent(variables.personalDataForm.email)}&phone=${encodeURIComponent(variables.personalDataForm.phone)}&categoryLabel=${encodeURIComponent(variables.categoryLabel)}&comment=${encodeURIComponent(variables.personalDataForm.comment || "")}&categoryDetail=${encodeURIComponent(variables.personalDataForm.categoryDetail || "")}`,
+    })
+      .then((res) => res.text())
+      .then((data) => alert(data))
+      .catch((error) => console.log(error));
   });
 
   const onOpenChange = (value: boolean) => {

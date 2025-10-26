@@ -10,10 +10,12 @@ import { Separator } from "@/components/ui/separator";
 import { navigationData } from "@/shared/consts";
 import { AppLink } from "@/shared/ui-kit";
 import { Menu } from "lucide-react";
+import { useState } from "react";
 
 export const AppNavigationMobile = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={(value) => setOpen(value)}>
       <DrawerTrigger asChild>
         <Button
           variant="outline"
@@ -23,7 +25,7 @@ export const AppNavigationMobile = () => {
         </Button>
       </DrawerTrigger>
       <DrawerContent className="bg-[rgba(9,9,9,0.45)] backdrop-blur-sm border-0!">
-        <div className="mx-auto w-full max-w-sm">
+        <div className="w-full">
           <DrawerHeader>
             <DrawerTitle>
               <a href="/">
@@ -43,6 +45,7 @@ export const AppNavigationMobile = () => {
               <AppLink
                 key={link.id}
                 anchor={link.anchor}
+                additionalClick={() => setOpen(false)}
                 props={{
                   href: link.href,
                   className:

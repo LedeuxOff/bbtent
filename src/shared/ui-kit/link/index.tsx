@@ -9,9 +9,15 @@ interface AppLinkProps {
     HTMLAnchorElement
   >;
   children?: ReactNode;
+  additionalClick?: () => void;
 }
 
-export const AppLink = ({ anchor, props, children }: AppLinkProps) => {
+export const AppLink = ({
+  anchor,
+  props,
+  children,
+  additionalClick,
+}: AppLinkProps) => {
   const router = useRouter();
 
   const handleGo = () => {
@@ -24,6 +30,10 @@ export const AppLink = ({ anchor, props, children }: AppLinkProps) => {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
+
+      if (additionalClick) {
+        additionalClick();
+      }
     }
   };
 
