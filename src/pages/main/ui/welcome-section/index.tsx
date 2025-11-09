@@ -14,6 +14,16 @@ export const MainPageWelcomeSection = () => {
     triggerOnce: true,
   });
 
+  const { ref: ref3, inView: inView3 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref4, inView: inView4 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <div id="#welcome" className="w-full flex justify-center">
       <AppContainer>
@@ -49,7 +59,12 @@ export const MainPageWelcomeSection = () => {
                   : "opacity-0 -translate-x-10"
               )}
             />
-            <ContactsWidget ref={ref2} inView={inView2} />
+            <ContactsWidget
+              mobileRef={ref3}
+              desctopRef={ref4}
+              inViewMobile={inView3}
+              inViewDesctop={inView4}
+            />
           </div>
         </div>
       </AppContainer>

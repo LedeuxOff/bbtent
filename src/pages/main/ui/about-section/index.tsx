@@ -14,6 +14,21 @@ export const MainPageAboutSection = () => {
     triggerOnce: true,
   });
 
+  const { ref: ref3, inView: inView3 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref4, inView: inView4 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref5, inView: inView5 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <div id="#about" className="w-full flex justify-center">
       <AppContainer>
@@ -55,12 +70,12 @@ export const MainPageAboutSection = () => {
               </div>
 
               <div
-                ref={ref2}
+                ref={ref3}
                 className={cn(
                   "col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6 transition-all duration-1000 ease-out",
-                  inView2
+                  inView3
                     ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-10"
+                    : "opacity-0 translate-y-10 md:-translate-y-10"
                 )}
               >
                 <span className="text-[#ffab00] font-[700] text-[32px] leading-[28px] flex items-center gap-4">
@@ -78,10 +93,10 @@ export const MainPageAboutSection = () => {
               </div>
 
               <div
-                ref={ref2}
+                ref={ref4}
                 className={cn(
                   "col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6 transition-all duration-1000 ease-out",
-                  inView2
+                  inView4
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
                 )}
@@ -101,10 +116,10 @@ export const MainPageAboutSection = () => {
               </div>
 
               <div
-                ref={ref2}
+                ref={ref5}
                 className={cn(
                   "col-span-4 md:col-span-2 lg:col-span-1 shadow-lg border-[1px] border-[rgba(0, 0, 0, 0.06)] rounded-[16px] p-8 flex flex-col gap-6 transition-all duration-1000 ease-out",
-                  inView2
+                  inView5
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 -translate-y-10"
                 )}

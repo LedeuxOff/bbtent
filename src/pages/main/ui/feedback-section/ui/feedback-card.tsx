@@ -2,16 +2,27 @@ import { cn } from "@/lib/utils";
 import type { FeedbackDataType } from "@/shared/consts/feedback-data";
 import type { ClassValue } from "clsx";
 import { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface FeedbackCardProps {
   feedback: FeedbackDataType;
   className?: ClassValue;
+  index: number;
 }
 
-export const FeedbackCard = ({ feedback, className }: FeedbackCardProps) => {
+export const FeedbackCard = ({
+  feedback,
+  className,
+  index,
+}: FeedbackCardProps) => {
   const textRef = useRef<HTMLSpanElement>(null);
   const [expandedText, setExpandedText] = useState(false);
   const [textHeight, setTextHeight] = useState(0);
+
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     if (textRef.current) {
@@ -21,8 +32,12 @@ export const FeedbackCard = ({ feedback, className }: FeedbackCardProps) => {
 
   return (
     <div
+      ref={ref}
       className={cn(
-        "col-span-3 md:col-span-1 border-[1px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8 shadow-lg",
+        `col-span-3 md:col-span-1 border-[1px] border-[#11213844] rounded-[8px] p-4 flex flex-col justify-between gap-8 shadow-lg transition-all duration-1000 ease-out`,
+        inView
+          ? `opacity-100 ${index % 2 !== 0 ? "-" : ""}translate-y-0`
+          : `opacity-0 ${index % 2 !== 0 ? "-" : ""}translate-y-10`,
         className
       )}
     >

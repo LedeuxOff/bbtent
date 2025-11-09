@@ -20,6 +20,12 @@ export const DesktopContactsWidget = ({
         "bg-[#80b1ff77] font-[600] border-none text-white cursor-pointer hover:bg-[#80b1ffAA] hover:text-white py-8 px-12 text-[16px] transition-all duration-1000 ease-out",
         inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
       )}
+      onClick={() => {
+        const element = document.getElementById("#contacts");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }}
     >
       <MailIcon className="w-10! h-10!" />
       Напишите нам

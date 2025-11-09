@@ -1,16 +1,42 @@
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import { AppContainer } from "@/shared/ui-kit";
 import { AtSignIcon, MapIcon, PhoneIcon } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 import { Map, Placemark, YMaps } from "react-yandex-maps";
 
 export const MainPageMapSection = () => {
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
-    <div className="w-full flex justify-center">
+    <div id="#contacts" className="w-full flex justify-center">
       <AppContainer>
         <div className="flex flex-col gap-8">
-          <span className="text-[38px] font-[700]">Контакты</span>
+          <span
+            ref={ref1}
+            className={cn(
+              "text-[38px] font-[700] transition-all duration-1000 ease-out",
+              inView1 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}
+          >
+            Контакты
+          </span>
 
-          <div className="h-[200px] sm:h-[300px] md:h-[400px] rounded-[16px] overflow-hidden relative">
+          <div
+            className={cn(
+              "h-[200px] sm:h-[300px] md:h-[400px] rounded-[16px] overflow-hidden relative transition-all duration-1000 ease-out",
+              inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            )}
+            ref={ref2}
+          >
             <div className="hidden md:flex absolute top-8 left-8 p-4 bg-[rgba(9,9,9,0.45)] backdrop-blur-sm z-10 rounded-[16px] flex-col gap-4 shadow-lg text-white">
               <span className="text-[32px] font-[700]">BBTent</span>
 

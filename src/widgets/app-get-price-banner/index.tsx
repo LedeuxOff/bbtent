@@ -95,11 +95,6 @@ export const AppGetPriceBanner = ({
           </Link>
         </span>
       </div>
-
-      <img
-        src="/gazel.png"
-        className="hidden md:flex absolute bottom-1 right-0 w-[300px] z-0"
-      />
     </div>
   );
 };

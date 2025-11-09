@@ -2,18 +2,25 @@ import { DesktopContactsWidget } from "./desktop";
 import { MobileContactsWidget } from "./mobile";
 
 interface ContactsWidgetProps {
-  ref: (node?: Element | null | undefined) => void;
-  inView: boolean;
+  mobileRef: (node?: Element | null | undefined) => void;
+  desctopRef: (node?: Element | null | undefined) => void;
+  inViewMobile: boolean;
+  inViewDesctop: boolean;
 }
 
-export const ContactsWidget = ({ ref, inView }: ContactsWidgetProps) => {
+export const ContactsWidget = ({
+  mobileRef,
+  desctopRef,
+  inViewMobile,
+  inViewDesctop,
+}: ContactsWidgetProps) => {
   return (
     <>
       <div className="hidden md:flex">
-        <DesktopContactsWidget ref={ref} inView={inView} />
+        <DesktopContactsWidget ref={desctopRef} inView={inViewDesctop} />
       </div>
       <div className="flex md:hidden">
-        <MobileContactsWidget ref={ref} inView={inView} />
+        <MobileContactsWidget ref={mobileRef} inView={inViewMobile} />
       </div>
     </>
   );

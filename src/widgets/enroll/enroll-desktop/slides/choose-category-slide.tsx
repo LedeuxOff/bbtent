@@ -23,7 +23,7 @@ export const ChooseCategorySlide = ({ form }: ChooseCategorySlideProps) => {
           <div
             key={branch.key}
             className={cn(
-              "relative col-span-2 md:col-span-1 flex flex-col gap-4 rounded-[16px] shadow-xl hover:scale-105 transition-transform border border-gray-100 h-[210px] overflow-hidden",
+              "relative col-span-2 md:col-span-1 flex flex-col gap-4 rounded-[16px] shadow-xl group border border-gray-100 h-[210px] overflow-hidden",
               !!selectedCategory &&
                 selectedCategory !== branch.key &&
                 "opacity-50"
@@ -31,7 +31,7 @@ export const ChooseCategorySlide = ({ form }: ChooseCategorySlideProps) => {
           >
             <img
               src={branch.imgSrc}
-              className="w-full h-full object-cover rounded-[16px]"
+              className="w-full h-full object-cover rounded-[16px] group-hover:scale-110 transition-transform"
             />
 
             <div className="absolute bg-[#202020BB] p-4 h-full w-[60%] flex flex-col justify-between gap-8">
@@ -65,7 +65,7 @@ export const ChooseCategorySlide = ({ form }: ChooseCategorySlideProps) => {
 
         <div
           className={cn(
-            "relative col-span-2 md:col-span-1 flex flex-col gap-4 rounded-[16px] shadow-xl hover:scale-105 transition-transform border border-gray-100 h-[210px] overflow-hidden bg-gray-100",
+            "relative col-span-2 md:col-span-1 flex flex-col gap-4 rounded-[16px] shadow-xl border border-gray-100 h-[210px] overflow-hidden bg-gray-100",
             !!selectedCategory && selectedCategory !== "any" && "opacity-50"
           )}
         >

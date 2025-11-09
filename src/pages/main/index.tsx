@@ -11,7 +11,7 @@ import { MainPageFAQSection } from "./ui/faq-section";
 
 export const MainPage = () => {
   return (
-    <div className="flex flex-col gap-8 pt-28">
+    <div className="flex flex-col gap-8 pt-28 overflow-hidden">
       <MainPageWelcomeSection />
       <MainPageAboutSection />
       <MainPageBranchesSection />
