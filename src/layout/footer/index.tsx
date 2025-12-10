@@ -42,7 +42,7 @@ export const AppFooter = () => {
           </div>
 
           <span className="text-white">
-            © 2005-2025 Производственная компания "BBTent" (ИП Петров П.П.)
+            © 2005-2025 Производственная компания "BBTent" (ИП Бычков В.Ю.)
           </span>
         </div>
       </AppContainer>

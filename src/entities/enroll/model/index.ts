@@ -72,7 +72,7 @@ export const useEnrollModel = ({
     };
 
     const url =
-      "https://script.google.com/macros/s/AKfycbxewIHaPjg0s4iCvZBpMNOL2ilHGYr5FqMjMLSYr5GoA3P7yD3MfSj3KiNTM6nq48gQyA/exec";
+      "https://script.google.com/macros/s/AKfycbx4X3t0XzWq5xT6GnLDAMS7hPi_Km2z-FDnq6AZLQeJcfCqsIg8vgrZRfTky7fsSV1a3Q/exec";
 
     fetch(url, {
       method: "POST",
