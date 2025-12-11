@@ -16,6 +16,27 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "@tanstack/react-router";
 import { useInView } from "react-intersection-observer";
 
+// ✅ Добавим маппинг для SEO-описаний (можно вынести в consts, если нужно)
+const BRANCH_ALT_MAP: Record<string, string> = {
+  auto: "Автотенты из ПВХ-ткани — защита автомобиля от дождя, снега и солнца в Энгельсе",
+  basseini:
+    "Укрытия для бассейнов и лагун — ПВХ-вкладыши и тенты по индивидуальным размерам",
+  selhoz_ukritya:
+    "Сельхозукрытия из ПВХ — защита техники, силоса и урожая в Саратовской области",
+  burovie_ukritya:
+    "Буровые укрытия из ПВХ-ткани — надёжная защита оборудования на месторождениях",
+  laguni:
+    "Гидроизоляция лагун и водоёмов — прочные ПВХ-мембраны для промышленности",
+  angari:
+    "Тентовые ангары и павильоны — быстровозводимые конструкции из ПВХ в Энгельсе",
+  paviloni:
+    "Павильоны из ПВХ-ткани — решения для торговли, складов и мероприятий",
+  krovlya:
+    "Мягкая кровля и гидроизоляция крыш — ПВХ-материалы для зданий и сооружений",
+  myagkie_okna:
+    "Мягкие окна из ПВХ — прозрачные тенты для беседок и веранд в Саратовской области",
+};
+
 export const MainPageBranchesSection = () => {
   const { ref: ref1, inView: inView1 } = useInView({
     threshold: 0.1,
@@ -34,18 +55,21 @@ export const MainPageBranchesSection = () => {
   });
 
   return (
-    <div id="#branches" className="w-full flex justify-center">
+    <div id="branches" className="w-full flex justify-center">
+      {" "}
+      {/* ✅ убран # */}
       <AppContainer>
         <div className="flex flex-col gap-8">
-          <span
+          {/* ✅ SEO: <h2> с усилением тематики */}
+          <h2
             ref={ref1}
             className={cn(
-              "text-[38px] font-[700] transition-all duration-1000 ease-out",
+              "text-[30px] md:text-[38px] font-[700] transition-all duration-1000 ease-out",
               inView1 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
             )}
           >
-            Наши направления
-          </span>
+            Направления производства тентов и укрытий
+          </h2>
 
           <div
             ref={ref2}
@@ -74,31 +98,35 @@ export const MainPageBranchesSection = () => {
                 }}
                 style={{ width: "100%", height: "100%" }}
               >
-                {BRANCHES_DATA.map((el) => (
-                  <SwiperSlide
-                    key={el.id}
-                    style={{ width: CARD_WIDTH }}
-                    onClick={() =>
-                      navigate({ to: `/$id`, params: { id: el.key } })
-                    }
-                  >
-                    <div className="flex flex-col gap-4 cursor-pointer">
-                      <div className="w-full h-[260px] sm:h-[260px] md:h-[280px] lg:h-[260px] rounded-[8px] overflow-hidden relative">
-                        <img
-                          src={el.imgSrc}
-                          alt="image-cover"
-                          className="object-cover h-full w-full"
-                        />
+                {BRANCHES_DATA.map((el) => {
+                  // ✅ Генерируем SEO-описание alt
+                  const altText =
+                    BRANCH_ALT_MAP[el.key] || `Укрытие ${el.label} от BBTent`;
 
-                        <div className="absolute bottom-4 bg-[rgba(0,0,0,.6)] mx-[4%] rounded-[8px] px-4 py-2">
-                          <span className="text-[16px] font-[500] text-white">
-                            {el.label}
-                          </span>
+                  return (
+                    <SwiperSlide
+                      key={el.id}
+                      style={{ width: CARD_WIDTH }}
+                      onClick={() => navigate({ to: `/${el.key}` })}
+                    >
+                      <div className="flex flex-col gap-4 cursor-pointer">
+                        <div className="w-full h-[260px] sm:h-[260px] md:h-[280px] lg:h-[260px] rounded-[8px] overflow-hidden relative">
+                          <img
+                            src={el.imgSrc}
+                            alt={altText} // ✅ Уникальный, SEO-дружественный alt
+                            className="object-cover h-full w-full"
+                          />
+
+                          <div className="absolute bottom-4 bg-[rgba(0,0,0,.6)] mx-[4%] rounded-[8px] px-4 py-2">
+                            <span className="text-[16px] font-[500] text-white">
+                              {el.label}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
             </div>
             <div

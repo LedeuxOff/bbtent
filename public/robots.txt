@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bbtent.ru/sitemap.xml
+
+# Запрет служебных и технических путей (если используются)
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/

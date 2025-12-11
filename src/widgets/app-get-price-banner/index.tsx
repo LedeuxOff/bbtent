@@ -33,6 +33,18 @@ export const AppGetPriceBanner = ({
     triggerOnce: true,
   });
 
+  // ✅ SEO-оптимизированный заголовок по умолчанию
+  const defaultTitle = (
+    <>
+      <h2 className="text-white font-[700] text-[24px] md:text-[32px] leading-[34px]">
+        Получите расчёт стоимости тента
+      </h2>
+      <h3 className="text-white font-[700] text-[24px] md:text-[32px]">
+        под ваш проект
+      </h3>
+    </>
+  );
+
   return (
     <div className="bg-[#112138cc] p-8 rounded-[16px] relative">
       <div className="flex flex-col gap-8 relative z-10">
@@ -44,37 +56,33 @@ export const AppGetPriceBanner = ({
           )}
         >
           {title ? (
-            <span className="text-white font-[700] text-[32px] leading-[34px]">
+            // Если title передан — остаётся как есть (например, на странице /auto)
+            <h2 className="text-white font-[700] text-[32px] leading-[34px]">
               {title}
-            </span>
+            </h2>
           ) : (
-            <>
-              <span className="text-white font-[700] text-[32px] leading-[34px]">
-                Получите расчет
-              </span>
-              <span className="text-white font-[700] text-[32px] leading-[34px]">
-                стоимости тента
-              </span>
-            </>
+            // Иначе — SEO-оптимизированный заголовок
+            defaultTitle
           )}
         </div>
 
         <Separator className="max-w-[50%] bg-[#ffd580AA]" />
 
-        <span
+        <p
           ref={ref2}
           className={cn(
             "text-white transition-all ease-out duration-1000",
             inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           )}
         >
-          Ответьте на несколько вопросов и мы свяжемся с вами для расчета
-          стоимости
-        </span>
+          Ответьте на несколько вопросов — и мы рассчитаем стоимость
+          производства тента из ПВХ-ткани в г. Энгельс, Саратовская область.
+          Доставка по России.
+        </p>
 
         <EnrollWidget
           ref={ref3}
-          label="Получить расчет"
+          label="Получить расчёт"
           categoryKey={categoryKey}
           className={cn(
             "transition-all ease-out duration-1000",
@@ -82,18 +90,18 @@ export const AppGetPriceBanner = ({
           )}
         />
 
-        <span
+        <p
           ref={ref4}
           className={cn(
             "text-gray-400 text-[14px] transition-all ease-out duration-1000",
             inView4 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           )}
         >
-          Нажимая кнопку "Получить расчет", Вы соглашаетесь с{" "}
+          Нажимая кнопку «Получить расчёт», вы соглашаетесь с{" "}
           <Link to="/privacy-policy" className="underline">
             Политикой конфиденциальности
           </Link>
-        </span>
+        </p>
       </div>
     </div>
   );

@@ -9,18 +9,66 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SelhozUkrityaRouteImport } from './routes/selhoz-ukritya'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as IdRouteImport } from './routes/$id'
+import { Route as PaviloniRouteImport } from './routes/paviloni'
+import { Route as MyagkieOknaRouteImport } from './routes/myagkie-okna'
+import { Route as LaguniRouteImport } from './routes/laguni'
+import { Route as KrovlyaRouteImport } from './routes/krovlya'
+import { Route as BurovieUkrityaRouteImport } from './routes/burovie-ukritya'
+import { Route as BasseiniRouteImport } from './routes/basseini'
+import { Route as AutoRouteImport } from './routes/auto'
+import { Route as AngariRouteImport } from './routes/angari'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SelhozUkrityaRoute = SelhozUkrityaRouteImport.update({
+  id: '/selhoz-ukritya',
+  path: '/selhoz-ukritya',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IdRoute = IdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
+const PaviloniRoute = PaviloniRouteImport.update({
+  id: '/paviloni',
+  path: '/paviloni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyagkieOknaRoute = MyagkieOknaRouteImport.update({
+  id: '/myagkie-okna',
+  path: '/myagkie-okna',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaguniRoute = LaguniRouteImport.update({
+  id: '/laguni',
+  path: '/laguni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KrovlyaRoute = KrovlyaRouteImport.update({
+  id: '/krovlya',
+  path: '/krovlya',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BurovieUkrityaRoute = BurovieUkrityaRouteImport.update({
+  id: '/burovie-ukritya',
+  path: '/burovie-ukritya',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BasseiniRoute = BasseiniRouteImport.update({
+  id: '/basseini',
+  path: '/basseini',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutoRoute = AutoRouteImport.update({
+  id: '/auto',
+  path: '/auto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AngariRoute = AngariRouteImport.update({
+  id: '/angari',
+  path: '/angari',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,36 +79,109 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$id': typeof IdRoute
+  '/angari': typeof AngariRoute
+  '/auto': typeof AutoRoute
+  '/basseini': typeof BasseiniRoute
+  '/burovie-ukritya': typeof BurovieUkrityaRoute
+  '/krovlya': typeof KrovlyaRoute
+  '/laguni': typeof LaguniRoute
+  '/myagkie-okna': typeof MyagkieOknaRoute
+  '/paviloni': typeof PaviloniRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/selhoz-ukritya': typeof SelhozUkrityaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$id': typeof IdRoute
+  '/angari': typeof AngariRoute
+  '/auto': typeof AutoRoute
+  '/basseini': typeof BasseiniRoute
+  '/burovie-ukritya': typeof BurovieUkrityaRoute
+  '/krovlya': typeof KrovlyaRoute
+  '/laguni': typeof LaguniRoute
+  '/myagkie-okna': typeof MyagkieOknaRoute
+  '/paviloni': typeof PaviloniRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/selhoz-ukritya': typeof SelhozUkrityaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$id': typeof IdRoute
+  '/angari': typeof AngariRoute
+  '/auto': typeof AutoRoute
+  '/basseini': typeof BasseiniRoute
+  '/burovie-ukritya': typeof BurovieUkrityaRoute
+  '/krovlya': typeof KrovlyaRoute
+  '/laguni': typeof LaguniRoute
+  '/myagkie-okna': typeof MyagkieOknaRoute
+  '/paviloni': typeof PaviloniRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/selhoz-ukritya': typeof SelhozUkrityaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$id' | '/privacy-policy'
+  fullPaths:
+    | '/'
+    | '/angari'
+    | '/auto'
+    | '/basseini'
+    | '/burovie-ukritya'
+    | '/krovlya'
+    | '/laguni'
+    | '/myagkie-okna'
+    | '/paviloni'
+    | '/privacy-policy'
+    | '/selhoz-ukritya'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$id' | '/privacy-policy'
-  id: '__root__' | '/' | '/$id' | '/privacy-policy'
+  to:
+    | '/'
+    | '/angari'
+    | '/auto'
+    | '/basseini'
+    | '/burovie-ukritya'
+    | '/krovlya'
+    | '/laguni'
+    | '/myagkie-okna'
+    | '/paviloni'
+    | '/privacy-policy'
+    | '/selhoz-ukritya'
+  id:
+    | '__root__'
+    | '/'
+    | '/angari'
+    | '/auto'
+    | '/basseini'
+    | '/burovie-ukritya'
+    | '/krovlya'
+    | '/laguni'
+    | '/myagkie-okna'
+    | '/paviloni'
+    | '/privacy-policy'
+    | '/selhoz-ukritya'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  IdRoute: typeof IdRoute
+  AngariRoute: typeof AngariRoute
+  AutoRoute: typeof AutoRoute
+  BasseiniRoute: typeof BasseiniRoute
+  BurovieUkrityaRoute: typeof BurovieUkrityaRoute
+  KrovlyaRoute: typeof KrovlyaRoute
+  LaguniRoute: typeof LaguniRoute
+  MyagkieOknaRoute: typeof MyagkieOknaRoute
+  PaviloniRoute: typeof PaviloniRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SelhozUkrityaRoute: typeof SelhozUkrityaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/selhoz-ukritya': {
+      id: '/selhoz-ukritya'
+      path: '/selhoz-ukritya'
+      fullPath: '/selhoz-ukritya'
+      preLoaderRoute: typeof SelhozUkrityaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
@@ -68,11 +189,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$id': {
-      id: '/$id'
-      path: '/$id'
-      fullPath: '/$id'
-      preLoaderRoute: typeof IdRouteImport
+    '/paviloni': {
+      id: '/paviloni'
+      path: '/paviloni'
+      fullPath: '/paviloni'
+      preLoaderRoute: typeof PaviloniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/myagkie-okna': {
+      id: '/myagkie-okna'
+      path: '/myagkie-okna'
+      fullPath: '/myagkie-okna'
+      preLoaderRoute: typeof MyagkieOknaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laguni': {
+      id: '/laguni'
+      path: '/laguni'
+      fullPath: '/laguni'
+      preLoaderRoute: typeof LaguniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/krovlya': {
+      id: '/krovlya'
+      path: '/krovlya'
+      fullPath: '/krovlya'
+      preLoaderRoute: typeof KrovlyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/burovie-ukritya': {
+      id: '/burovie-ukritya'
+      path: '/burovie-ukritya'
+      fullPath: '/burovie-ukritya'
+      preLoaderRoute: typeof BurovieUkrityaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/basseini': {
+      id: '/basseini'
+      path: '/basseini'
+      fullPath: '/basseini'
+      preLoaderRoute: typeof BasseiniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auto': {
+      id: '/auto'
+      path: '/auto'
+      fullPath: '/auto'
+      preLoaderRoute: typeof AutoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/angari': {
+      id: '/angari'
+      path: '/angari'
+      fullPath: '/angari'
+      preLoaderRoute: typeof AngariRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,8 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  IdRoute: IdRoute,
+  AngariRoute: AngariRoute,
+  AutoRoute: AutoRoute,
+  BasseiniRoute: BasseiniRoute,
+  BurovieUkrityaRoute: BurovieUkrityaRoute,
+  KrovlyaRoute: KrovlyaRoute,
+  LaguniRoute: LaguniRoute,
+  MyagkieOknaRoute: MyagkieOknaRoute,
+  PaviloniRoute: PaviloniRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SelhozUkrityaRoute: SelhozUkrityaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

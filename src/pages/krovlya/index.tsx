@@ -1,0 +1,200 @@
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { AppContainer } from "@/shared/ui-kit";
+import { AppGetPriceBanner, EnrollWidget } from "@/widgets";
+import { ImagesViewerWidget } from "@/widgets/images-viewer";
+import { useRouter } from "@tanstack/react-router";
+import { ChevronLeft } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+import { Helmet } from "react-helmet-async";
+
+const data = [
+  "/photo/krovlya/1.jpg",
+  "/photo/krovlya/2.jpg",
+  "/photo/krovlya/3.jpg",
+  "/photo/krovlya/4.jpg",
+  "/photo/krovlya/5.jpg",
+  "/photo/krovlya/6.jpg",
+  "/photo/krovlya/7.jpg",
+];
+
+export const KrovlyaPage = () => {
+  const { navigate } = useRouter();
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref3, inView: inView3 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: ref4, inView: inView4 } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  // ✅ JSON-LD микроразметка
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Монтаж мягкой кровли из ПВХ-мембраны",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "BBTent",
+      url: "https://bbtent.ru",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Энгельс",
+        addressRegion: "Саратовская область",
+        addressCountry: "RU",
+      },
+    },
+    areaServed: "RU",
+    description:
+      "Монтаж и ремонт плоской кровли из ПВХ-мембраны в г. Энгельс, Саратовская область. Работаем с материалами заказчика или предоставляем ПВХ-мембрану плотностью 1200–1500 г/м². Термосварка профессиональным оборудованием. Гарантия до 10 лет на монтаж.",
+    offers: {
+      "@type": "Offer",
+      url: "https://bbtent.ru/krovlya",
+      priceCurrency: "RUB",
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  return (
+    <>
+      {/* ✅ Уникальные мета-теги */}
+      <Helmet>
+        <title>
+          Мягкая кровля из ПВХ-мембраны в Энгельсе — монтаж и ремонт | BBTent
+        </title>
+        <meta
+          name="description"
+          content="Монтаж плоской кровли из ПВХ-мембраны в г. Энгельс, Саратовская область. Работаем с вашим материалом или предоставляем ПВХ-мембрану 1200–1500 г/м². Термосварка, гарантия до 10 лет. Доставка и выезд по РФ."
+        />
+        <link rel="canonical" href="https://bbtent.ru/krovlya" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Мягкая кровля из ПВХ-мембраны в Энгельсе — монтаж и ремонт | BBTent"
+        />
+        <meta
+          property="og:description"
+          content="Монтаж плоской кровли из ПВХ-мембраны в г. Энгельс, Саратовская область. Работаем с вашим материалом или предоставляем ПВХ-мембрану 1200–1500 г/м²."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bbtent.ru/krovlya" />
+        <meta
+          property="og:image"
+          content="https://bbtent.ru/photo/krovlya/1.jpg"
+        />
+        <meta property="og:locale" content="ru_RU" />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceJsonLd)}
+        </script>
+      </Helmet>
+
+      <div className="flex flex-col gap-8 pt-28 items-center">
+        <AppContainer>
+          <div className="flex flex-col gap-8">
+            <div
+              ref={ref1}
+              className={cn(
+                "transition-all duration-1000 ease-out",
+                inView1
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+              )}
+            >
+              <div className="relative inline-block">
+                <div className="flex gap-4 items-center">
+                  <Button
+                    type="button"
+                    className="cursor-pointer bg-[#09090973]"
+                    onClick={() => navigate({ to: "/" })}
+                  >
+                    <ChevronLeft />
+                  </Button>
+                  {/* ✅ <h1> с ключевым запросом */}
+                  <h1 className="text-[30px] md:text-[38px] font-[700]">
+                    Мягкая кровля
+                  </h1>
+                </div>
+                <div className="bg-[#ffd580] h-[2px] absolute w-full" />
+              </div>
+            </div>
+
+            <div
+              ref={ref2}
+              className={cn(
+                "shadow-lg border-[1px] rounded-[16px] p-8 flex flex-col gap-6 bg-[#112138cc]"
+              )}
+            >
+              <p
+                className={cn(
+                  "text-[#FFF] text-[18px] transition-all duration-1000 ease-out",
+                  inView2
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                )}
+              >
+                Выполняем монтаж и ремонт плоской кровли из ПВХ-мембраны в г.
+                Энгельс, Саратовская область. Работаем как с вашим материалом,
+                так и предоставляем ПВХ-мембрану плотностью 1200–1500 г/м² от
+                проверенных поставщиков. Используем профессиональное
+                оборудование для термосварки, обеспечивая 100% герметичность
+                швов. Подходим для крыш домов, ангаров, складов, гаражей и
+                промышленных цехов. Гарантия на монтаж — до 10 лет. Выезд по
+                России.
+              </p>
+
+              <EnrollWidget
+                categoryKey="krovlya"
+                ref={ref3}
+                className={cn(
+                  "transition-all duration-1000 ease-out",
+                  inView3
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-10"
+                )}
+              />
+            </div>
+
+            {/* ✅ <h2> для фото */}
+            <h2
+              ref={ref4}
+              className={cn(
+                "text-[30px] md:text-[38px] font-[700] transition-all duration-1000 ease-out",
+                inView4
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+              )}
+            >
+              Фото монтажа мягкой кровли
+            </h2>
+
+            <ImagesViewerWidget images={data} name="Кровля" />
+
+            {/* ✅ Усиленный CTA с гео */}
+            <AppGetPriceBanner
+              title="Рассчитать стоимость монтажа кровли в Энгельсе"
+              categoryKey="krovlya"
+            />
+
+            <div className="pb-8"></div>
+          </div>
+        </AppContainer>
+      </div>
+    </>
+  );
+};

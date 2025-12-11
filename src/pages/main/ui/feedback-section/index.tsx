@@ -11,18 +11,21 @@ export const MainPageFeedbackSection = () => {
   });
 
   return (
-    <div id="#feedback" className="w-full flex justify-center">
+    <div id="feedback" className="w-full flex justify-center">
+      {" "}
+      {/* ✅ убран # */}
       <AppContainer>
         <div className="flex flex-col gap-8">
-          <span
+          {/* ✅ SEO: <h2> вместо <span> */}
+          <h2
             ref={ref}
             className={cn(
-              "text-[38px] font-[700] transition-all duration-1000 ease-out",
+              "text-[30px] md:text-[38px] font-[700] transition-all duration-1000 ease-out",
               inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
             )}
           >
             Отзывы клиентов
-          </span>
+          </h2>
           <div className="grid grid-cols-3 gap-8">
             {FEEDBACK_DATA.map((feedback, index) => (
               <FeedbackCard

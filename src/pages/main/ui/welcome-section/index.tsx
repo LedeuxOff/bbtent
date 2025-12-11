@@ -25,29 +25,32 @@ export const MainPageWelcomeSection = () => {
   });
 
   return (
-    <div id="#welcome" className="w-full flex justify-center">
+    <div id="welcome" className="w-full flex justify-center">
       <AppContainer>
         <div className="flex flex-col gap-8 md:gap-12 items-center justify-center bg-[#112138cc] py-8 md:py-16 px-4 rounded-[16px]">
-          <span
+          {/* ✅ SEO: <h1> с ключевым запросом */}
+          <h1
             ref={ref1}
             className={cn(
-              "text-[48px] md:text-[64px] font-[700] text-white transition-opacity duration-1000 ease-out",
+              "text-[36px] md:text-[48px] font-[700] text-white transition-opacity duration-1000 ease-out text-center",
               inView1 ? "opacity-100" : "opacity-0"
             )}
           >
-            BBTent
-          </span>
-          <span
+            Производство тентов в Энгельсе
+          </h1>
+
+          {/* ✅ Улучшенный SEO-текст с упоминанием услуг и региона */}
+          <p
             ref={ref1}
             className={cn(
-              "text-[20px] md:text-[32px] text-center max-w-[810px] font-[500] text-white transition-all duration-1000 ease-out",
+              "text-[18px] md:text-[24px] text-center max-w-[810px] font-[500] text-white transition-all duration-1000 ease-out",
               inView1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}
           >
-            Добро пожаловать в нашу компанию, где мы создаем тентовые укрытия и
-            гидроизоляцию, обеспечивающие защиту и комфорт в любых погодных
-            условиях!
-          </span>
+            Изготовление автотентов, укрытий для бассейнов, буровых установок и
+            сельхозтехники из ПВХ-ткани. Более 20 лет в Саратовской области.
+            Доставка по России.
+          </p>
 
           <div className="flex flex-col md:flex-row gap-4">
             <EnrollWidget

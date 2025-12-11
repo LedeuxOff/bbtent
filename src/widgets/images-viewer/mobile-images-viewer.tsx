@@ -6,14 +6,15 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import type { BranchDetailDataItemType } from "@/shared/consts/branches-detail-data";
 
 interface BranchDetailMobileImagesViewerProps {
-  branch: BranchDetailDataItemType;
+  data: string[];
+  name: string;
 }
 
 export const BranchDetailMobileImagesViewer = ({
-  branch,
+  data,
+  name,
 }: BranchDetailMobileImagesViewerProps) => {
   return (
     <Drawer>
@@ -30,19 +31,17 @@ export const BranchDetailMobileImagesViewer = ({
         <DrawerHeader>
           <DrawerTitle>
             <div className="flex gap-2 items-center">
-              <span className="text-white font-[600] text-[24px]">
-                {branch.name}
-              </span>
+              <span className="text-white font-[600] text-[24px]">{name}</span>
             </div>
           </DrawerTitle>
         </DrawerHeader>
         <div className="w-full overflow-scroll px-4">
           <div className="pb-8 flex flex-col gap-4">
             <div className="grid grid-cols-1 gap-4">
-              {branch.data.map((photo) => (
+              {data.map((photo) => (
                 <img
-                  key={photo.id}
-                  src={photo.src}
+                  key={photo}
+                  src={photo}
                   className="col-span-1 w-full rounded-[8px]"
                 />
               ))}

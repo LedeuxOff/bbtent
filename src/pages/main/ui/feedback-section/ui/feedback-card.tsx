@@ -30,6 +30,11 @@ export const FeedbackCard = ({
     }
   }, []);
 
+  // ✅ Генерируем alt для изображения отзыва (например, фото объекта)
+  const imgAlt = feedback.text
+    ? `Фото укрытия или тента от клиента ${feedback.author}`
+    : `Фото от клиента ${feedback.author}`;
+
   return (
     <div
       ref={ref}
@@ -44,7 +49,8 @@ export const FeedbackCard = ({
       <div className="flex flex-col gap-8">
         <img
           src={feedback.imgUrl}
-          className="rounded-[8px] max-h-[260px] md:max-h-[160px] object-cover"
+          alt={imgAlt} // ✅ SEO и доступность
+          className="rounded-[8px] max-h-[260px] md:max-h-[160px] object-cover w-full"
         />
         <div className="flex flex-col gap-2">
           <span
@@ -57,17 +63,23 @@ export const FeedbackCard = ({
             {feedback.text}
           </span>
           {((!!textHeight && textHeight >= 72) || expandedText) && (
-            <span
+            <button
+              type="button"
               onClick={() => setExpandedText(!expandedText)}
-              className="text-blue-500 cursor-pointer"
+              className="text-blue-500 cursor-pointer text-left"
+              aria-expanded={expandedText}
             >
               {expandedText ? "Свернуть" : "Развернуть"}
-            </span>
+            </button>
           )}
         </div>
       </div>
       <div className="flex gap-4 items-center">
-        <img src="/user.png" className="w-16 h-16" />
+        <img
+          src="/user.png"
+          alt={`Аватар автора отзыва: ${feedback.author}`} // ✅ Доступность
+          className="w-16 h-16 rounded-full"
+        />
         <div className="flex flex-col gap-1">
           <span className="font-[700] text-[18px]">{feedback.author}</span>
           <span className="text-gray-500">{feedback.date}</span>
