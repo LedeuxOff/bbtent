@@ -79,7 +79,7 @@ export const useEnrollModel = ({
       headers: {
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
       },
-      body: `lastName=${encodeURIComponent(variables.personalDataForm.lastName)}&firstName=${encodeURIComponent(variables.personalDataForm.firstName)}&middleName=${encodeURIComponent(variables.personalDataForm.middleName || "")}&email=${encodeURIComponent(variables.personalDataForm.email)}&phone=${encodeURIComponent(variables.personalDataForm.phone)}&categoryLabel=${encodeURIComponent(variables.categoryLabel)}&comment=${encodeURIComponent(variables.personalDataForm.comment || "")}&categoryDetail=${encodeURIComponent(variables.personalDataForm.categoryDetail || "")}`,
+      body: `lastName=${encodeURIComponent(variables.personalDataForm.lastName)}&firstName=${encodeURIComponent(variables.personalDataForm.firstName)}&middleName=${encodeURIComponent(variables.personalDataForm.middleName || "")}&email=${encodeURIComponent(variables.personalDataForm.email)}&phone=${encodeURIComponent(variables.personalDataForm.phone.replace(/\D/g, ""))}&categoryLabel=${encodeURIComponent(variables.categoryLabel)}&comment=${encodeURIComponent(variables.personalDataForm.comment || "")}&categoryDetail=${encodeURIComponent(variables.personalDataForm.categoryDetail || "")}`,
     })
       .then((res) => res.text())
       .then(() => setStatus("success"))
